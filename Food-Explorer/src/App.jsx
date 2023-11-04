@@ -10,7 +10,7 @@ import GlobalStyle from "./styles/global"
 import {Input} from "./components/input"
 import {Menu} from "./pages/common_user/menu"
 import { SingIn } from './pages/login/Sing-In'
-import { Home } from './pages/common_user/Home'
+import { AdminNavBar } from './components/NavBar-Admin'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   
@@ -21,7 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <GlobalStyle/>
 
       
-       <Home/>
+       <AdminNavBar/>
        
 
        
