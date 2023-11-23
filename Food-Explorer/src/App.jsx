@@ -7,10 +7,9 @@ import GlobalStyle from "./styles/global"
 
 
 
-import {Input} from "./components/input"
-import {Menu} from "./pages/common_user/menu"
-import { SingIn } from './pages/login/Sing-In'
-import { AdminNavBar } from './components/NavBar-Admin'
+import {Home } from "./pages/common_user/Home"
+import { FormFood } from './components/Form-Food'
+import { NewFood } from './pages/admin_user/new_food'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   
@@ -21,7 +20,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <GlobalStyle/>
 
       
-       <AdminNavBar/>
+       <NewFood/>
        
 
        
