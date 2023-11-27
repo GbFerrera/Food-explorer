@@ -8,6 +8,10 @@ import GlobalStyle from "./styles/global"
 
 
 import { NewFood } from './pages/admin_user/new_food'
+import { Home } from './pages/common_user/Home'
+import {Menu} from './pages/common_user/Menu'
+import { SingIn } from './pages/login/Sing-In'
+import { SingUp } from './pages/login/Sing-Up'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   
@@ -18,7 +22,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <GlobalStyle/>
 
       
-       <NewFood/>
+       <Home/>
        
 
        
