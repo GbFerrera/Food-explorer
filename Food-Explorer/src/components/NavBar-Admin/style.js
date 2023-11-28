@@ -5,6 +5,7 @@ export const Component = styled.header`
 
 display: flex;
 width: 100%;
+background: ${({theme}) => theme.COLORS.Dark_dark_700};
 
 button{
 background:none ;

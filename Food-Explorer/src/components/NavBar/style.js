@@ -94,11 +94,8 @@ border-radius: 5px;
 
 #search{
 
-display :flex ;
-align-items: center;
-
-
-width: 100%;
+display: inline-flex;
+width: 50%;
 background: ${({theme}) => theme.COLORS.dark_dark_900};
 padding: 0 14px ;
 
