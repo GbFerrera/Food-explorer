@@ -5,6 +5,9 @@ export const Component = styled.form`
 display: flex;
 flex-direction: column;
 
+
+
+
 textarea {
   resize: none;
   padding: 14px ;
@@ -12,6 +15,7 @@ textarea {
   color: ${({theme}) => theme.COLORS.Light_Light_100} ;
 
 }
+
 
 
 

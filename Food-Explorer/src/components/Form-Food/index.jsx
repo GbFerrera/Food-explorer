@@ -1,5 +1,5 @@
 import { Component } from "./style";
-
+import {Button} from "../button"
 
 
 export function FormFood() {
@@ -29,8 +29,6 @@ export function FormFood() {
 
 
    </select>
-
-
    <label htmlFor="ingredients">Ingredientes</label>
 
    <div id="ingredients">
@@ -40,12 +38,17 @@ export function FormFood() {
    </div>
 
 
+   <label htmlFor="price">Preço</label>
+
+   <input id="price" placeholder="R$ 00,00" type="number" />
+
+
    <label htmlFor="description">Descrição</label>
 
-   <textarea name="descrição" id="description" cols="30" rows="10"
+   <textarea name="descrição" id="description" cols="30" rows="7"
    placeholder="A Salada César é uma opção refrescante para o verão."></textarea>
 
-
+   <Button className= "btn" title={"Salvar alterações"}/>
 
 
 

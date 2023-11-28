@@ -12,10 +12,10 @@ return(
 
     <AdminNavBar/>
 
-<div className="new">
+   <div className="new">
     <button> voltar </button>
     <h1>Novo Prato</h1>
-</div>
+   </div>
      <FormFood/>
 
 

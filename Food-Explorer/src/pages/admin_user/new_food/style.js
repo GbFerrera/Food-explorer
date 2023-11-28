@@ -14,12 +14,20 @@ label{
 
 }
 
+input {
+    background: ${({theme}) => theme.COLORS.dark_dark_800};
+    color:${({theme}) => theme.COLORS.Light_Light_100} ;
+
+
+}
 
 
 
 @media (max-width: 768px ) {
 
    min-width : 375px ;
+
+   
 
 
 header {
@@ -31,7 +39,7 @@ padding: 65px 28px 28px;
 
 img{
 
-  width: 24px;
+width: 24px;
 height: 24px;
 
 }
@@ -83,7 +91,8 @@ margin-bottom: -16px;
 input {
     background: ${({theme}) => theme.COLORS.dark_dark_800};
     color:${({theme}) => theme.COLORS.Light_Light_100} ;
-
+   padding: 12px 16px;
+   border-radius: 8px;
 
 }
 select {
@@ -92,8 +101,13 @@ padding: 16px;
 color: ${({theme}) => theme.COLORS.Light_Light_400};
 background: ${({theme}) => theme.COLORS.dark_dark_900} ;
 border: none;
+border-radius: 8px;
 
+}
 
+.btn {
+background-color: ${({theme}) => theme.COLORS.Tints_Tomato_400};
+margin-top: 36px;
 }
 
 
@@ -104,6 +118,32 @@ border: none;
 
 
 
+
+
+
+    
+}
+
+
+@media (min-width: 769px) {
+
+
+.new{
+padding: 46px 123px 0 ;
+
+}    
+
+form{
+
+margin: auto;
+padding: 32px 123px 116px ;
+
+display: flex;
+
+
+      
+}
+  
 
 
 
