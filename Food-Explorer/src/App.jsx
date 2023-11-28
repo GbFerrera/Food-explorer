@@ -22,7 +22,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <GlobalStyle/>
 
       
-       <Home/>
+       <NewFood/>
        
 
        

@@ -10,6 +10,9 @@ return(
 
   <Container>
 
+    <button> voltar </button>
+    <h1>Editar Prato</h1>
+
     <AdminNavBar/>
 
 

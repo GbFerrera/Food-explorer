@@ -3,6 +3,12 @@ import styled from "styled-components";
 
 
 export const Container = styled.div`
+ 
+
+ max-width: 1368px;
+ margin: auto;
+
+
 @media (max-width: 430px){
   min-width: 425px;
 header{
@@ -59,11 +65,17 @@ width: 210px;
 }
 }
 @media(min-width: 431px) {
+
+
+
 section{
 display: flex;
 background: linear-gradient(180deg, #091E26 0%, #00131C 100%);
 margin-top: 164px;
 border-radius: 8px;
+
+
+
 h5{
   font-family: Poppins;
 font-size: 40px;
@@ -80,6 +92,8 @@ overflow-x: auto;
 main{
 max-width: 1120px ;
 padding: 0 124px ;
+margin: auto;
+
 > p{
 margin-top: 60px;
 }
