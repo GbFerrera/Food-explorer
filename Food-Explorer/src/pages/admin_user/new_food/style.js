@@ -4,6 +4,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
 
+max-width: 1300px;
+
 button {
     background: none;
     color: ${({theme}) => theme.COLORS.light_light_300};
@@ -148,12 +150,12 @@ margin-top: 36px;
 
 @media (min-width: 769px) {
 
-    max-width: 1370px ;
+   
 
     margin: auto;
 
   header {
-padding: 24px 123px ;
+  padding: 24px 0 24px 123px ;
 
   }  
 
@@ -234,9 +236,13 @@ margin: 16px 0 32px;
 
 .btn {
 background-color: ${({theme}) => theme.COLORS.Tints_Tomato_400};
-width: 250px;
+width: 172px;
 
-margin-bottom: 200px ;
+font-size: 14px;
+
+padding: 12px 24px;
+
+margin-bottom: 180px ;
 }
 
 

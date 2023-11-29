@@ -47,17 +47,20 @@ div {
   #headerDetails {
 
     display: flex;
-    gap: 14px;
+    gap: 32px;
     
   }
 
   #headerSearch{
-    background: ${({theme}) => theme.COLORS.Dark_dark_600};
-    padding: 12px 14px;
+    display: flex;
+    gap: 14px;
+    background: ${({theme}) => theme.COLORS.dark_dark_900};
+    padding: 12px 130px;
     width: 100%;
+   
 
     input {
-     width: 100%;
+     width: 250px;
 
     }
   }
@@ -67,19 +70,34 @@ display: flex;
 flex-direction: column;
 align-items: center;
 
+h1{
+  font-size: 24px;
+
+}
+
+p{
+font-size: 12px;
+margin-left: 160px;
+}
+
+
+
 div {
 
   display: flex;
   gap: 10px;
 }
 
-#adm {
-
-margin-left: 185px;
-
-}
 
 
+
+  }
+
+  #btnNew {
+
+    padding: 12px 32px ;
+    background: ${({theme}) => theme.COLORS.Tints_Tomato_100};
+  
   }
   
 }
