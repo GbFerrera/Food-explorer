@@ -148,6 +148,10 @@ margin-top: 36px;
 
 @media (min-width: 769px) {
 
+    max-width: 1370px ;
+
+    margin: auto;
+
   header {
 padding: 24px 123px ;
 

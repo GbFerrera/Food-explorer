@@ -18,11 +18,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-body, input, button, textarea {
+body, input, button, textarea, select {
   font-family: 'Roboto', serif;
   font-size: 16px;
   outline: none;
   border:none;
+  cursor: pointer;
 }
 
 a {

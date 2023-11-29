@@ -23,5 +23,66 @@ div {
 
 }
 
+@media (max-width: 767px) {
+
+  .wrapper {
+   display: none;
+
+  }
+  
+}
+
+
+@media (min-width: 768px) {
+
+  display: flex;
+  gap: 32px ;
+
+
+  .none {
+   display: none;
+
+  }
+
+  #headerDetails {
+
+    display: flex;
+    gap: 14px;
+    
+  }
+
+  #headerSearch{
+    background: ${({theme}) => theme.COLORS.Dark_dark_600};
+    padding: 12px 14px;
+    width: 100%;
+
+    input {
+     width: 100%;
+
+    }
+  }
+
+  .title {
+display: flex;
+flex-direction: column;
+align-items: center;
+
+div {
+
+  display: flex;
+  gap: 10px;
+}
+
+#adm {
+
+margin-left: 185px;
+
+}
+
+
+  }
+  
+}
+
 
 `
