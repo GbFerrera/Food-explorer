@@ -18,7 +18,6 @@ input {
     background: ${({theme}) => theme.COLORS.dark_dark_800};
     color:${({theme}) => theme.COLORS.Light_Light_100} ;
 
-
 }
 
 
@@ -33,8 +32,8 @@ input {
 header {
 
 display: flex;
-gap: 80px ;
-padding: 65px 28px 28px;
+gap: 60px ;
+padding: 56px 28px 24px;
 
 
 img{
@@ -81,18 +80,36 @@ display: grid;
 gap: 24px;
 padding: 0 32px 53px;
 
+
+
 label {
 
 display: block;
-margin-bottom: -16px;
+margin-bottom: 16px;
 
 }
 
 input {
-    background: ${({theme}) => theme.COLORS.dark_dark_800};
-    color:${({theme}) => theme.COLORS.Light_Light_100} ;
-   padding: 12px 16px;
-   border-radius: 8px;
+background: ${({theme}) => theme.COLORS.dark_dark_800};
+color:${({theme}) => theme.COLORS.Light_Light_100} ;
+padding: 12px 16px;
+border-radius: 8px;
+width: 100%;
+
+}
+
+.flex {
+div {
+    background: ${({theme}) => theme.COLORS.dark_dark_800} ;
+    padding: 2px 8px;
+    border-radius: 8px;
+    margin-bottom: 24px ;
+
+    button{
+
+        padding: 10px 16px;
+    }
+}
 
 }
 select {
@@ -102,7 +119,11 @@ color: ${({theme}) => theme.COLORS.Light_Light_400};
 background: ${({theme}) => theme.COLORS.dark_dark_900} ;
 border: none;
 border-radius: 8px;
+width: 100%;
+}
 
+textarea{
+ width: 100%;
 }
 
 .btn {
@@ -127,6 +148,25 @@ margin-top: 36px;
 
 @media (min-width: 769px) {
 
+  header {
+padding: 24px 123px ;
+
+  }  
+
+  section {
+
+        display: flex;
+        gap: 20px;
+        margin-top:32px ;
+
+      .flex {
+        display: grid;
+        gap: 16px ;
+        width: 100%;
+      }
+       
+    }
+
 
 .new{
 padding: 46px 123px 0 ;
@@ -135,13 +175,77 @@ padding: 46px 123px 0 ;
 
 form{
 
-margin: auto;
-padding: 32px 123px 116px ;
 
-display: flex;
+padding: 0 123px ;
+
+
+ input {
+padding: 12px 16px ;
+border-radius: 8px;
+
+ }
+
+ #image {
+
+    max-width: 100% ;
+ }
+ #name {
+
+   width :495px ;
+ }
+
+ select {
+
+padding: 16px;
+color: ${({theme}) => theme.COLORS.Light_Light_400};
+background: ${({theme}) => theme.COLORS.dark_dark_900} ;
+border: none;
+border-radius: 8px;
+max-width: 295px;
+}
+
+
+.flex {
+div {
+    background: ${({theme}) => theme.COLORS.dark_dark_800} ;
+    padding: 2px 8px;
+    border-radius: 8px;
+
+    button{
+
+        padding: 10px 16px;
+    }
+}
+}
+
+#rowTwo {
+margin-bottom: 32px;
+
+}
+
+textarea {
+margin: 16px 0 32px;
+
+}
+
+.btn {
+background-color: ${({theme}) => theme.COLORS.Tints_Tomato_400};
+width: 250px;
+
+margin-bottom: 200px ;
+}
+
+
+
 
 
       
+}
+
+footer {
+
+padding: 24px 123px;
+
 }
   
 
