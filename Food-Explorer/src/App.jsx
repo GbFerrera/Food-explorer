@@ -23,7 +23,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <GlobalStyle/>
 
       
-       <MenuAdmin/>
+       <Home/>
        
 
        

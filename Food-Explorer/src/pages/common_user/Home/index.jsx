@@ -10,10 +10,10 @@ return(
 
   <Container>
 
-
+<div className="edit">
 
    <NavBar/>
-
+</div>
 <main> 
 
    <section>
@@ -40,6 +40,8 @@ return(
    <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" price={"49,97"}/>
    <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" price={"49,97"}/>
    <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" price={"49,97"}/>
+   <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" price={"49,97"}/>
+  <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" price={"49,97"}/>
 
 
  </div>
@@ -49,6 +51,8 @@ return(
 <div className="cards">
 
 
+ <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" price={"49,97"}/>
+ <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" price={"49,97"}/>
  <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" price={"49,97"}/>
  <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" price={"49,97"}/>
  <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" price={"49,97"}/>

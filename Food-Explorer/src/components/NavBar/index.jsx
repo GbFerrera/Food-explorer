@@ -11,14 +11,14 @@ export function NavBar() {
 
    <img className="wrapper" src="src/images/navBar/options.svg" alt="Imagem de opções de menu da Home" />
 
-    <div>
-
+    <div className="title">
+      <div>
        <img src="src/images/polygon.svg" alt="Logo do app" />
        <h1>food explorer</h1>
-
+    </div>
        <div className="none" id="search">
 
-          <button>
+          <button >
 
               <img src="src/images/search.svg" alt="Imagem de lupa de pesquisa" />
 
@@ -39,6 +39,11 @@ export function NavBar() {
 
        <img  className="none" src="src/images/navBar/logOut.svg" alt="" />
 
+       <button id="LogOut">
+       <img src="src/images/navBar/logOut.svg" alt="" />
+  
+       </button>
+
 
     </div>
 
@@ -47,6 +52,7 @@ export function NavBar() {
 
     <span className="wrapper">0</span>
 
+  
 </Component>
 )
 

@@ -37,6 +37,7 @@ button:nth-child(2) {
 
 }
 main{
+  max-width: 1110px;
   margin: 0 28px;
   min-height: 600px;
   button{

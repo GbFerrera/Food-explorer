@@ -66,6 +66,12 @@ font-weight: 500;
   display: flex;
   align-items: center;
 justify-content: space-between;
+
+
+
+#LogOut {
+  display: none;
+}
 }
 
 

@@ -11,13 +11,16 @@ export const Container = styled.div`
 
 @media (max-width: 430px){
   min-width: 425px;
+
+
+ 
 header{
-padding: 56px 28px 24px  ;
-span{
+ 
+   span{
  position:absolute ;
 top: 50px ;
 right: 20px;
-}
+  }
 }
 section{
 display: flex;
@@ -66,7 +69,38 @@ width: 210px;
 }
 @media(min-width: 431px) {
 
+header{
 
+  #LogOut{
+    background: none;
+   }
+
+  div:nth-child(2){
+  display: flex;
+  justify-content: space-between;
+  }
+
+  #search{
+
+   display :flex ;
+   min-width: 581px;
+   border-radius: 5px;
+   padding-left: 90px;
+
+   button{
+    height: 25px;
+   }
+
+
+   input{
+    padding: 12px 0;
+   }
+
+ 
+    
+  }
+
+}
 
 section{
 display: flex;
