@@ -3,57 +3,54 @@ import { Input } from "../input";
 import { Button } from "../button";
 
 export function NavBar() {
-
-
   return (
-
     <Component>
+      <div className="mobile">
+        <img
+          src="src/images/navBar/options.svg"
+          alt="Imagem de opções de menu da Home"
+        />
 
-   <img className="wrapper" src="src/images/navBar/options.svg" alt="Imagem de opções de menu da Home" />
+        <div className="title">
+          <img src="src/images/polygon.svg" alt="Logo do app" />
+          <h1>food explorer</h1>
+        </div>
 
-    <div className="title">
-      <div>
-       <img src="src/images/polygon.svg" alt="Logo do app" />
-       <h1>food explorer</h1>
-    </div>
-       <div className="none" id="search">
+      <button>
+        <img src="src/images/navBar/receipt.svg" alt="Recibo de pedidos" />
+    </button>
+        <span>0</span>
+      </div>
 
-          <button >
+      <div className="desktop">
 
-              <img src="src/images/search.svg" alt="Imagem de lupa de pesquisa" />
+      <div className="title">
+          <img src="src/images/polygon.svg" alt="Logo do app" />
+          <h1>food explorer</h1>
+        </div>
+        
 
+        <div id="search">
+          <div className="itensSearch">
+          <button>
+            <img src="src/images/search.svg" alt="Imagem de lupa de pesquisa" />
           </button>
 
-  <Input placeholder= "Busque por pratos ou ingredientes"/>
+          <Input placeholder="Busque por pratos ou ingredientes" />
+        </div>
+   </div>
+      <button id="requests">
+        <img src="src/images/navBar/receipt.svg" alt="Recibo de pedidos" />
+    
+        <p>Pedidos (<span>1</span>)</p>
 
-       </div>
-
-       <button className="none" id="BtnNav">
-   
-        <img src="src/images/navBar/receipt.svg" alt="" />   
-
-         pedidos  
-       
-
-       </button>
-
-       <img  className="none" src="src/images/navBar/logOut.svg" alt="" />
+      </button>
 
        <button id="LogOut">
-       <img src="src/images/navBar/logOut.svg" alt="" />
-  
-       </button>
+          <img src="src/images/navBar/logOut.svg" alt="" />
+        </button>
 
-
-    </div>
-
-
-    <img className="wrapper" src="src/images/navBar/receipt.svg" alt="Recibo de pedidos" />
-
-    <span className="wrapper">0</span>
-
-  
-</Component>
-)
-
+      </div>
+    </Component>
+  );
 }

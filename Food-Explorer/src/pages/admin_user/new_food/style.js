@@ -177,6 +177,11 @@ margin-top: 36px;
 .new{
 padding: 46px 123px 0 ;
 
+ button{
+    margin-bottom: 24px;
+ }
+
+
 }    
 
 form{

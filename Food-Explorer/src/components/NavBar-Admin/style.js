@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const Component = styled.header`
 
 display: flex;
-width: 100%;
+max-width: 100%;
 background: ${({theme}) => theme.COLORS.Dark_dark_700};
 
 button{
@@ -99,7 +99,7 @@ div {
     background: ${({theme}) => theme.COLORS.Tints_Tomato_100};
   
   }
-  
+
 }
 
 
