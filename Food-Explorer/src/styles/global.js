@@ -23,7 +23,11 @@ body, input, button, textarea, select {
   font-size: 16px;
   outline: none;
   border:none;
-  cursor: pointer;
+ 
+}
+
+button{
+  cursor:pointer
 }
 
 a {

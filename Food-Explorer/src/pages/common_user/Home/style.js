@@ -5,37 +5,38 @@ import styled from "styled-components";
 export const Container = styled.div`
  
 
- max-width: 1368px;
+ width: 100%;
  margin: auto;
+
+ .none{
+  display: none;
+ }
 
 
 @media (max-width: 430px){
   min-width: 425px;
 
 
- 
-header{
- 
-   span{
- position:absolute ;
-top: 50px ;
-right: 20px;
-  }
-}
+
+
 section{
 display: flex;
-height: 120px;
+height: 110px;
 background: linear-gradient(180deg, #091E26 0%, #00131C 100%);
 border-radius: 3px;
 margin: 44px 16px 0 36px;
 position: relative;
+
 img{
+
+  width: 191px;
+height: 149px;
 position: absolute;
-top: -30px;
+top: -20px;
 left: -30px;
 opacity: 0.8;
 }
-div {
+#text {
 margin: 36px 21px 22px 140px;
 font-family: Poppins;
 p{
@@ -48,7 +49,7 @@ h5 {
 }
 }
 }
-.title{
+.category{
   margin: 62px 0 24px 24px;
   
 }
@@ -58,57 +59,49 @@ gap: 24px ;
 overflow-x: auto;
 margin: 24px;
 padding: 0 24px;
+
+
 .itens{
 padding: 24px ;
 display: flex;
+gap: 12px;
 justify-content: center;
 align-items: center;
 width: 210px;
 }
+
 }
 }
 @media(min-width: 431px) {
 
-header{
-
-  #LogOut{
-    background: none;
-   }
-
-  div:nth-child(2){
-  display: flex;
-  justify-content: space-between;
-  }
-
-  #search{
-
-   display :flex ;
-   min-width: 581px;
-   border-radius: 5px;
-   padding-left: 90px;
-
-   button{
-    height: 25px;
-   }
-
-
-   input{
-    padding: 12px 0;
-   }
-
- 
-    
-  }
-
-}
 
 section{
+position: relative;
 display: flex;
+justify-content: flex-end;
 background: linear-gradient(180deg, #091E26 0%, #00131C 100%);
 margin-top: 164px;
+width: 100%;
 border-radius: 8px;
 
 
+
+ img{
+  opacity: 0.8;
+  width: 632px;
+  height: 406px;
+  position: absolute;
+  top: -150px;
+  left: -40px;
+  
+
+ }
+
+ #text{
+  padding: 90px 80px 90px 60px ;
+  margin-left: 300px;
+
+ }
 
 h5{
   font-family: Poppins;
@@ -120,20 +113,46 @@ font-weight: 500;
 padding :24px ;
 display: flex;
 gap: 55px ;
-margin-top: 60px;
 overflow-x: auto;
 }
 main{
-max-width: 1120px ;
+width: 100%;
 padding: 0 124px ;
 margin: auto;
 
 > p{
 margin-top: 60px;
+font-size: 32px;
+font-style: normal;
+font-weight: 500;
 }
 }
 footer {
 padding: 24px 123px ;
 }
+}
+
+
+@media (min-width: 1450px) {
+
+  max-width: 2560px;
+  section{
+    justify-content: center;
+    height: 260px;
+
+    img{
+      left: 20px;
+    }
+
+    #text{
+      display: flex;
+      gap: 80px;
+
+      p{
+        display: flex;
+    align-items: center;
+      }
+    }
+  }
 }
 `

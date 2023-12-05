@@ -8,40 +8,78 @@ return(
 
  <Component>
 
-<div className="itens">
+  <div className="itens">
+ <button className="BgNone" id="favorite">
+<img src="src/images/card/Favorite.svg" alt="icone de favoritar comida" />
+</button>
+<img id="foodImg" src={img} />
 
-<img id="favorite" src="src/images/card/Favorite.svg" alt="icone de favoritar comida" />
-
-<img src={img} />
-
-<p>{food}</p>
+<p id="foodName">{food}</p>
 
 <p id="price"> R$ {price} </p>
 
 
-<div>
+<div className="hideInclud">
 
-    <button>
+ <div className="flex">
     
-    <img src="src/images/card/less.svg" alt="" />
+<div id="amountCard">
 
-    </button>
+<button className="BgNone">
 
-    <p> 01 </p>
+<img src="src/images/card/less.svg" alt="" />
 
-    <button>
-    
-    <img src="src/images/card/more.svg" alt="" />
+</button>
 
-    </button>
+<p> 01 </p>
+
+<button className="BgNone">
+
+<img src="src/images/card/more.svg" alt="" />
+
+</button>
 
 
 </div>
 
+<Button id="include" title= "incluir"/>
+
+
 </div>
 
 
-<Button title= "incluir"/>
+</div>
+
+ <div className="wrapperInclud">
+
+ <div id="amountCard">
+
+<button className="BgNone">
+
+<img src="src/images/card/less.svg" alt="" />
+
+</button>
+
+<p> 01 </p>
+
+<button className="BgNone">
+
+<img src="src/images/card/more.svg" alt="" />
+
+</button>
+
+
+</div>
+
+<Button id="include" title= "incluir"/>
+
+
+ </div>
+
+</div>
+
+
+
 
 
 

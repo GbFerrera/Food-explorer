@@ -10,17 +10,17 @@ return(
 
   <Container>
 
-<div className="edit">
-
    <NavBar/>
-</div>
+
 <main> 
 
    <section>
 
-    <img src="src/images/home/fruits.png" alt="Frutas decorativas " />
+    <img src="src/images/home/fruits.svg" alt="Frutas decorativas " />
+    <img src="src/images/home/fruits.svg" alt="Frutas decorativas " />
 
-   <div>
+
+   <div id="text">
     <h5>Sabores inigualáveis</h5>
     <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
 
@@ -31,7 +31,7 @@ return(
 
 
 
- <p className="title">Refeições</p>
+ <p className="category">Refeições</p>
 
   <div className="cards">
 
@@ -46,7 +46,7 @@ return(
 
  </div>
 
- <p className="title">Sobremesas</p>
+ <p className="category">Sobremesas</p>
 
 <div className="cards">
 
@@ -61,7 +61,7 @@ return(
 
 </div>
 
-<p className="title">Bebidas</p>
+<p className="category">Bebidas</p>
 
 <div className="cards">
 
