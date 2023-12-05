@@ -35,15 +35,18 @@ return(
 
   <div className="cards">
 
+  
 
-   <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" price={"49,97"}/>
-   <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" price={"49,97"}/>
-   <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" price={"49,97"}/>
-   <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" price={"49,97"}/>
-   <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" price={"49,97"}/>
-  <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" price={"49,97"}/>
+  <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
+   <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
+   <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
+   <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
+   <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
+   <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
 
 
+
+   
  </div>
 
  <p className="category">Sobremesas</p>
@@ -51,13 +54,14 @@ return(
 <div className="cards">
 
 
- <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" price={"49,97"}/>
- <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" price={"49,97"}/>
- <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" price={"49,97"}/>
- <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" price={"49,97"}/>
- <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" price={"49,97"}/>
- <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" price={"49,97"}/>
+<Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
+   <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
+   <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
+   <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
+   <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
+   <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
 
+   
 
 </div>
 
@@ -66,14 +70,14 @@ return(
 <div className="cards">
 
 
- <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" price={"49,97"}/>
- <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" price={"49,97"}/>
- <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" price={"49,97"}/>
- <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" price={"49,97"}/>
- <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" price={"49,97"}/>
- <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" price={"49,97"}/>
+   <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
+   <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
+   <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
+   <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
+   <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
+   <Card img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
 
-
+   
 </div>
 
 

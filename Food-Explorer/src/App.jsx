@@ -9,13 +9,13 @@ import GlobalStyle from "./styles/global"
 
 import { NewFood } from './pages/admin_user/new_food'
 import { Home } from './pages/common_user/Home'
+import { HomeAdmin } from './pages/admin_user/Home' 
 import {Menu} from './pages/common_user/Menu'
 import { MenuAdmin } from './pages/admin_user/menu'
 import { SingIn } from './pages/login/Sing-In'
 import { SingUp } from './pages/login/Sing-Up'
 import { Food } from './pages/common_user/Food'
 import { EditFood } from './pages/admin_user/Edit_food'
-
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   
@@ -26,7 +26,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <GlobalStyle/>
 
       
-       <Home/>
+       <HomeAdmin/>
        
 
        

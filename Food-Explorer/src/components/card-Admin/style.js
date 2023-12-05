@@ -32,6 +32,7 @@ color:  #82F3FF;
 #descriptionCard{
   display: none;
 }
+.descriptionNone
 
 .wrapperInclud{
   display: flex;

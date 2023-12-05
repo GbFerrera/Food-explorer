@@ -16,7 +16,7 @@ export function AdminNavBar() {
 
   <div className="title">
        
-      <div >
+      <div id="titleMobile">
       <img src="src/images/polygon.svg" alt="Logo do app" />
       <h1>food explorer</h1>
      </div>
@@ -27,12 +27,14 @@ export function AdminNavBar() {
    <div className="wrapper" id="headerDetails">
 
 <div id="headerSearch">
+
+  <div className="searchItens">
    <img src="src/images/search.svg" alt="" />
 
 
 <input type="text"  placeholder="Busque por pratos ou ingredientes"/>
 </div>
-
+</div>
 <Button id="btnNew" title={"Novo prato"}/>
 
 <button id="LogOut">

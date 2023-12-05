@@ -27,8 +27,22 @@ div {
 
   .wrapper {
    display: none;
-
+   max-width: 428px;
   }
+
+  display: flex;
+  justify-content: space-between;
+  padding: 60px 28px 28px;
+  margin: auto;
+
+ #titleMobile{
+  display: flex;
+  gap: 8px;
+ }
+
+ #adm{
+  margin-left: 8px;
+ }
   
 }
 
@@ -37,6 +51,8 @@ div {
 
   display: flex;
   gap: 32px ;
+  padding: 24px 123px;
+  justify-content: space-between;
 
 
   .none {
@@ -48,6 +64,15 @@ div {
 
     display: flex;
     gap: 32px;
+    width: 100%;
+
+    #btnNew{
+      display: flex;
+     justify-content: center;
+     align-items: center;
+      max-width: 216px;
+     
+    }
     
   }
 
@@ -57,11 +82,19 @@ div {
     background: ${({theme}) => theme.COLORS.dark_dark_900};
     padding: 12px 130px;
     width: 100%;
-   
+
+    .searchItens{
+      display: flex;
+      margin: auto;
+      gap: 16px;
+      
+    }
 
     input {
-     width: 250px;
-
+     width: 100%;
+     min-width: 250px;
+     background: ${({theme}) => theme.COLORS.dark_dark_900};
+     color: white;
     }
   }
 

@@ -2,7 +2,7 @@ import { Component } from "./style";
 import { Button } from "../button";
 
 
-export function Card({img,food,price}) {
+export function Card({img,food,description,price}) {
 
 return(
 
@@ -15,7 +15,7 @@ return(
 <img id="foodImg" src={img} />
 
 <p id="foodName">{food}</p>
-
+<p id="descriptionCard">{description}</p>
 <p id="price"> R$ {price} </p>
 
 
