@@ -12,9 +12,9 @@ return(
 
   <div>
     <label htmlFor={id}>{label}</label>
-  </div>
+  
      <input id={id} {...rest} />
-
+</div>
    </Component>
 
 

@@ -7,6 +7,10 @@ export const Component = styled.div`
 width: 100%;
 display: flex;
 
+div{
+    width: 100%;
+}
+
 input {
 
   
@@ -20,8 +24,10 @@ color: ${({theme}) => theme.COLORS.Light_Light_100};
 
 
 label {
-display: block;
+    display: block;
 margin-bottom:12px ;
+
+color: ${({theme}) => theme.COLORS.Light_Light_400};
 
 }
 

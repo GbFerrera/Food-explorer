@@ -37,7 +37,7 @@ left: -30px;
 opacity: 0.8;
 }
 #text {
-margin: 36px 21px 22px 140px;
+margin: 30px 0 0 160px;
 font-family: Poppins;
 p{
   margin-top: 6px;

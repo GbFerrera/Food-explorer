@@ -10,7 +10,7 @@ return(
 
   <div className="itens">
  <button className="BgNone" id="favorite">
-<img src="src/images/pen.svg" alt="icone de editar comida" />
+<img id="penEdit" src="src/images/pen.svg" alt="icone de editar comida" />
 </button>
 <img id="foodImg" src={img} />
 

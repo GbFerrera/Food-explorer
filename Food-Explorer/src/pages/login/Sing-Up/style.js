@@ -4,6 +4,8 @@ import styled from "styled-components";
 
 export const Container = styled.div `
 
+margin: auto;
+
 input:focus {
   
   border: 1px solid #fff;

@@ -61,11 +61,14 @@ align-items: center;
 
 }
  
-#favorite {
+#penEdit {
 
 position: absolute;
 right: 16px;
 top: 16px;
+
+ width: 24px;
+ height: 24px;
 }
 
 
@@ -99,7 +102,7 @@ gap: 14px ;
       gap: 16px ;
     }
   
-#favorite{
+#penEdit{
   top: 16px;
   right: 16px;
   position: absolute;

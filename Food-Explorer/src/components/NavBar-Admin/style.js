@@ -31,9 +31,17 @@ div {
   }
 
   display: flex;
-  justify-content: space-between;
+  gap: 80px;
   padding: 60px 28px 28px;
   margin: auto;
+
+  h1{
+    font-size: 21px;
+  }
+  img{
+    width: 25px;
+    height: 25px;
+  }
 
  #titleMobile{
   display: flex;
@@ -59,7 +67,9 @@ div {
    display: none;
 
   }
-
+#btnOptions{
+  display: none;
+}
   #headerDetails {
 
     display: flex;

@@ -9,7 +9,7 @@ export function AdminNavBar() {
 
   <Component>
 
-    <button className="none">
+    <button id="btnOptions" >
   <img src="src/images/navBar/options.svg" alt="Imagem de opções de menu da Home" />
 
    </button>
