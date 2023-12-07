@@ -10,7 +10,13 @@ export function FormFood() {
           <div className="flex">
             <label htmlFor="image">Imagem do prato</label>
 
+           <label htmlFor="image" id="labelUpdate">
             <input id="image" type="file" />
+
+            <img src="src/images/update.svg" alt="" />
+            Selecione imagem
+            
+            </label>
           </div>
 
           <div className="nameWidht">
@@ -38,8 +44,8 @@ export function FormFood() {
 
             <div id="ingredients">
 
-            <IngredientItem value="https://rocketseat.com.br" />
-            <IngredientItem isNew placeholder="Novo link" />
+            <IngredientItem value="Pão" />
+            <IngredientItem isNew placeholder="Adicionar" />
             </div>
           </div>
 

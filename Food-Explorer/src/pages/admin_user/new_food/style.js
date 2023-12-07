@@ -92,7 +92,7 @@ margin-bottom: 16px;
 }
 
 input {
-background: ${({theme}) => theme.COLORS.dark_dark_800};
+
 color:${({theme}) => theme.COLORS.Light_Light_100} ;
 padding: 12px 16px;
 border-radius: 8px;
@@ -102,7 +102,7 @@ width: 100%;
 
 .flex {
 div {
-    background: ${({theme}) => theme.COLORS.dark_dark_800} ;
+    
     padding: 2px 8px;
     border-radius: 8px;
     margin-bottom: 24px ;
@@ -122,6 +122,34 @@ background: ${({theme}) => theme.COLORS.dark_dark_900} ;
 border: none;
 border-radius: 8px;
 width: 100%;
+}
+
+#ingredients{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background-color: ${({theme}) => theme.COLORS.dark_dark_800};
+
+    div{
+
+        margin: 0;
+        padding: 10px 16px;
+    }
+
+    input{
+        background: none;
+        padding: 0;
+    }
+    
+    button{
+        padding: 0;
+    }
+  
+
+    img{
+        width: 8px;
+        height: 8px;
+    }
 }
 
 textarea{
@@ -196,9 +224,10 @@ border-radius: 8px;
  #image {
 
     width: 230px ;
+    
  }
  #name {
-
+   padding: 16px;
    width :100%;
  }
 
@@ -224,14 +253,21 @@ width: 295px;
 .flex {
 
  
-div {
+   #ingredients  {
+    display: flex;
+    gap: 16px;
     background: ${({theme}) => theme.COLORS.dark_dark_800} ;
     padding: 2px 8px;
     border-radius: 8px;
 
+     input{
+        background: none;
+     }
+
     button{
 
-        padding: 10px 16px;
+        font-size: 8px;
+        
     }
 }
 }

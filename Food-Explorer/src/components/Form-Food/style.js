@@ -17,7 +17,46 @@ textarea {
 }
 
 
+@media (max-width: 800px) {
+  
+  
+  #labelUpdate{
+    background: ${({theme}) => theme.COLORS.dark_dark_800};
+    border-radius: 8px;
+    padding: 12px 32px;
+    display: flex;
+    gap: 8px ;
+
+    input{
+      display: none;
+    }
+  }
+
+}
+
+
 @media (min-width: 800px) {
+
+
+  #labelUpdate{
+   
+    background: ${({theme}) => theme.COLORS.dark_dark_800};
+    border-radius: 8px;
+    padding: 12px 32px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 230px;
+
+    img{
+      width: 24px;
+      height: 24px;
+    }
+
+    input{
+      display: none;
+    }
+  }
 
   .lineOne{
   display: flex;
