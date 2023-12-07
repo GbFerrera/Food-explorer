@@ -46,14 +46,10 @@ h2{
 
 section{
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 24px;
 
-  .rowOne,.rowTwo{
-    display: flex;
-    gap: 24px ;
-  }
+ 
   
  #ingredient{
   background: #192227;
@@ -175,6 +171,7 @@ height: 389px;
 
 section{
   display: flex;
+  flex-wrap: wrap;
   gap: 28px;
 
 
