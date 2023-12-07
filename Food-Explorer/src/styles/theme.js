@@ -13,6 +13,7 @@ export default {
     Light_Light_400: "#C4C4CC",
     light_light_300:" #E1E1E6",
     light_light_500: "#7C7C8A",
+    light_light_600: "#76797B",
     light_light_700: "#4D585E",
 
     Tints_Tomato_100: "#750310",

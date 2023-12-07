@@ -40,6 +40,23 @@ textarea {
   display: flex;
   gap: 32px ;
   width: 100%;
+  
+  #ingredients{
+  display: flex;
+  height: 48px;
+
+   input{
+  padding: 0;
+   }
+
+  }
+
+   img{
+    height: 8px;
+    width: 8px;
+   }
+
+
  }
 
 #widhtIngredient{

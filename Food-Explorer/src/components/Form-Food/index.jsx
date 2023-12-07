@@ -1,5 +1,6 @@
 import { Component } from "./style";
 import { Button } from "../button";
+import { IngredientItem } from "../ingredient-Item";
 
 export function FormFood() {
   return (
@@ -36,7 +37,9 @@ export function FormFood() {
             <label htmlFor="ingredients">Ingredientes</label>
 
             <div id="ingredients">
-              <button type="button">adicionar +</button>
+
+            <IngredientItem value="https://rocketseat.com.br" />
+            <IngredientItem isNew placeholder="Novo link" />
             </div>
           </div>
 
