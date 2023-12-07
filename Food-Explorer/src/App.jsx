@@ -16,7 +16,6 @@ import { SingIn } from './pages/login/Sing-In'
 import { SingUp } from './pages/login/Sing-Up'
 import { Food } from './pages/common_user/Food'
 import { AdminFood } from './pages/admin_user/Food'
-import { EditFood } from './pages/admin_user/Edit_food'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   
@@ -27,7 +26,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <GlobalStyle/>
 
       
-       <NewFood/>
+       <Food/>
        
 
        

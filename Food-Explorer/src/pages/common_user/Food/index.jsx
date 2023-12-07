@@ -35,24 +35,26 @@ return(
 
   <section>
 
-<div className="rowOne">
+<div className="ingredients">
+  
     <div id="ingredient">alface</div>
     <div id="ingredient">alface</div>
     <div id="ingredient">alface</div>
+    <div id="ingredient">alface</div>
+    <div id="ingredient">alface</div>
+    <div id="ingredient">alface</div>
+    <div id="ingredient">alface</div>
+    <div id="ingredient">alface</div>
+  
 
     </div>
 
-    <div className="rowTwo">
-    <div id="ingredient">alface</div>
-    <div id="ingredient">gengibre</div>
-    <div id="ingredient">alface</div>
-
-
-    </div>
+  
 
 
 
   </section>
+
   </div>
 
 

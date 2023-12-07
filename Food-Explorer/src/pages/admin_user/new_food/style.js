@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
 
-max-width: 1300px;
+
 
 button {
     background: none;
@@ -106,7 +106,7 @@ div {
     padding: 2px 8px;
     border-radius: 8px;
     margin-bottom: 24px ;
-
+    
     button{
 
         padding: 10px 16px;
@@ -150,14 +150,11 @@ margin-top: 36px;
 
 @media (min-width: 769px) {
 
-   
+   width: 100%;
 
     margin: auto;
 
-  header {
-  padding: 24px 0 24px 123px ;
 
-  }  
 
   section {
 
@@ -168,7 +165,7 @@ margin-top: 36px;
       .flex {
         display: grid;
         gap: 16px ;
-        width: 100%;
+
       }
        
     }
@@ -198,12 +195,13 @@ border-radius: 8px;
 
  #image {
 
-    max-width: 100% ;
+    width: 230px ;
  }
  #name {
 
-   width :495px ;
+   width :100%;
  }
+
 
  select {
 
@@ -212,11 +210,20 @@ color: ${({theme}) => theme.COLORS.Light_Light_400};
 background: ${({theme}) => theme.COLORS.dark_dark_900} ;
 border: none;
 border-radius: 8px;
-max-width: 295px;
+width: 295px;
 }
 
+#ingredients{
+    width: 100%;
+}
+
+#price{
+    width: 225px;
+}
 
 .flex {
+
+ 
 div {
     background: ${({theme}) => theme.COLORS.dark_dark_800} ;
     padding: 2px 8px;
@@ -229,7 +236,7 @@ div {
 }
 }
 
-#rowTwo {
+.lineTwo {
 margin-bottom: 32px;
 
 }
@@ -237,6 +244,11 @@ margin-bottom: 32px;
 textarea {
 margin: 16px 0 32px;
 
+}
+
+#btnSave{
+    display: flex;
+    justify-content: end;
 }
 
 .btn {
@@ -247,7 +259,7 @@ font-size: 14px;
 
 padding: 12px 24px;
 
-margin-bottom: 180px ;
+margin-bottom: 140px ;
 }
 
 

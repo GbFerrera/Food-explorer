@@ -42,6 +42,12 @@ gap: 24px;
   display: flex;
     flex-direction: column;
     gap: 24px;
+
+    .ingredients{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px ;
+  }
  }
 
 h2{
@@ -181,6 +187,12 @@ section{
   display: flex;
   gap: 28px;
 
+  .ingredients{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px ;
+  }
+
 
   #ingredient{
   background: #192227;
@@ -190,11 +202,7 @@ section{
 
  }
 
-  .rowOne,.rowTwo{
-  display: flex;
-  gap: 28px;
- 
-  }
+
 }
 
 

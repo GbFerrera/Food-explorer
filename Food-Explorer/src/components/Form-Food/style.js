@@ -17,6 +17,38 @@ textarea {
 }
 
 
+@media (min-width: 800px) {
+
+  .lineOne{
+  display: flex;
+  gap: 32px;
+  width: 100%;
+
+ .nameWidht{
+  width: 100%;
+
+
+ }
+
+
+
+
+}
+
+
+.lineTwo{
+  display: flex;
+  gap: 32px ;
+  width: 100%;
+ }
+
+#widhtIngredient{
+  width: 100%;
+}
+  
+}
+
+
 
 
 
