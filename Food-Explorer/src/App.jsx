@@ -8,6 +8,7 @@ import GlobalStyle from "./styles/global"
 
 
 import { NewFood } from './pages/admin_user/new_food'
+import { EditFood } from './pages/admin_user/edit_food'
 import { Home } from './pages/common_user/Home'
 import { HomeAdmin } from './pages/admin_user/Home' 
 import {Menu} from './pages/common_user/Menu'
@@ -26,7 +27,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <GlobalStyle/>
 
       
-       <NewFood/>
+       <HomeAdmin/>
        
 
        

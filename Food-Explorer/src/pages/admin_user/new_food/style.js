@@ -127,6 +127,7 @@ width: 100%;
 #ingredients{
     display: flex;
     align-items: center;
+    padding: 4px 8px;
     gap: 16px;
     background-color: ${({theme}) => theme.COLORS.dark_dark_800};
 
@@ -242,9 +243,7 @@ border-radius: 8px;
 width: 295px;
 }
 
-#ingredients{
-    width: 100%;
-}
+
 
 #price{
     width: 225px;
@@ -254,10 +253,11 @@ width: 295px;
 
  
    #ingredients  {
+    width: 100%;
     display: flex;
     gap: 16px;
     background: ${({theme}) => theme.COLORS.dark_dark_800} ;
-    padding: 2px 8px;
+    padding: 4px 8px;
     border-radius: 8px;
 
      input{

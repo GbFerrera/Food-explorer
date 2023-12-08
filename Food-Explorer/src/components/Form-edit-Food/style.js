@@ -5,7 +5,19 @@ export const Component = styled.form`
 display: flex;
 flex-direction: column;
 
+#Buttons{
+  width: 100%;
+  display: flex;
+  gap: 30px;
 
+  button{
+    padding: 12px 16px;
+  }
+
+  button:nth-child(1) {
+    background: ${({theme}) => theme.COLORS.dark_dark_800};
+  }
+}
 
 
 textarea {
@@ -31,6 +43,30 @@ textarea {
       display: none;
     }
   }
+
+  #ingredients{
+    padding: 4px 8px;
+    border-radius: 8px ;
+  }
+
+  #Buttons{
+
+
+  button{
+    padding: 12px 24px;
+    font-size: 14px;
+    text-align: center;
+    max-width: 172px ;
+  }
+
+  button:nth-child(1){
+    max-width: 162px;
+   
+  }
+
+
+  }
+
 
 }
 
@@ -81,6 +117,9 @@ textarea {
   width: 100%;
   
   #ingredients{
+  display: flex;
+  height: 48px;
+  
 
    input{
   padding: 0;
@@ -93,6 +132,21 @@ textarea {
     width: 8px;
    }
 
+
+ }
+
+ #Buttons{
+  padding-bottom: 120px;
+  justify-content: end;
+
+  button{
+    width: 172px;
+  }
+  
+  button:nth-child(1){
+  width: 135px ;
+  font-size: 12px;
+  }
 
  }
 
