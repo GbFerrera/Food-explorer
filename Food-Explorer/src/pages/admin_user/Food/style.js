@@ -24,6 +24,7 @@ flex-direction: column;
 gap: 24px;
 
 
+
 #imgFood{
   width: 264px;
  height: 264px;
@@ -32,6 +33,7 @@ gap: 24px;
 
  .recipe{
   display: flex;
+
     flex-direction: column;
     gap: 24px;
  }
@@ -46,6 +48,7 @@ h2{
 
 section{
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 24px;
 
@@ -103,6 +106,7 @@ gap: 16px;
 
 #editBtn{
   margin-top: 48px;
+  margin-bottom: 50px;
  
 }
 

@@ -26,7 +26,7 @@ export function SingUp() {
    <Input id="name" label= "Seu nome" placeholder= "Exemplo: Maria da Silva"/>
 
    <Input id="email" label= "Email" placeholder= "Exemplo: exemplo@exemplo.com.br"/>
-   <Input id="senha" label= "Senha" placeholder= "No mínimo 6 caracteres"/>
+   <Input type="password" id="senha" label= "Senha" placeholder= "No mínimo 6 caracteres"/>
 
    <Button title= "Entrar" />
 

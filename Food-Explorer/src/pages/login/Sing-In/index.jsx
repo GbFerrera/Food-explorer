@@ -24,7 +24,7 @@ export function SingIn() {
  <form action="">
   
    <Input id="email" label= "Email" placeholder= "Exemplo: exemplo@exemplo.com.br"/>
-   <Input id="senha" label= "Senha" placeholder= "No mínimo 6 caracteres"/>
+   <Input type="password" id="senha" label= "Senha" placeholder= "No mínimo 6 caracteres"/>
 
    <Button title= "Entrar" />
 

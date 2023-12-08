@@ -31,7 +31,9 @@ textarea {
 
 @media (max-width: 800px) {
   
-  
+  .flex{
+    margin-top: 16px;
+  }
   #labelUpdate{
     background: ${({theme}) => theme.COLORS.dark_dark_800};
     border-radius: 8px;
@@ -48,6 +50,7 @@ textarea {
     padding: 4px 8px;
     border-radius: 8px ;
   }
+
 
   #Buttons{
 

@@ -30,8 +30,10 @@ gap: 20px ;
 margin-top: 36px;
 justify-content: start;
 
-button:nth-child(2) {
-  display: flex;
+a{
+  font-size: 24px ;
+  color: #E1E1E6;
+  font-family: "Poppins" , sans-serif;
 }
 
 

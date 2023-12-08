@@ -1,6 +1,8 @@
 import { Component } from "./style";
 import {Button } from "../../components/button"
 
+import{Link} from "react-router-dom"
+
 
 export function AdminNavBar() {
 
@@ -9,10 +11,10 @@ export function AdminNavBar() {
 
   <Component>
 
-    <button id="btnOptions" >
+    <Link to="/menu" id="btnOptions" >
   <img src="src/images/navBar/options.svg" alt="Imagem de opções de menu da Home" />
 
-   </button>
+   </Link>
 
   <div className="title">
        

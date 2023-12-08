@@ -17,7 +17,6 @@ return(
    <section>
 
     <img src="src/images/home/fruits.svg" alt="Frutas decorativas " />
-    <img src="src/images/home/fruits.svg" alt="Frutas decorativas " />
 
 
    <div id="text">
