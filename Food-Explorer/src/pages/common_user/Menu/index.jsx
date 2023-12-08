@@ -1,6 +1,7 @@
 import { Container } from "./style";
 import { Input } from "../../../components/input";
 import { Footer } from "../../../components/footer";
+import { Link } from "react-router-dom";
 
 export function Menu() {
 
@@ -10,9 +11,9 @@ return(
 
 
   <header> 
-   <button>
+   <Link to={"/"}>
   <img src="src/images/close.svg" alt="Imagem para fechar Menu" />
-    </button>
+    </Link>
 
   <p>Menu</p>
   </header>

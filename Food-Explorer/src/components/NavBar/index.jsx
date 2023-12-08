@@ -1,16 +1,19 @@
 import { Component } from "./style";
 import { Input } from "../input";
 import { Button } from "../button";
+import { Link } from "react-router-dom";
 
 export function NavBar() {
   return (
     <Component>
       <div className="mobile">
+
+        <Link to={"/menu"}>
         <img
           src="src/images/navBar/options.svg"
           alt="Imagem de opções de menu da Home"
         />
-
+    </Link>
         <div className="title">
           <img src="src/images/polygon.svg" alt="Logo do app" />
           <h1>food explorer</h1>
