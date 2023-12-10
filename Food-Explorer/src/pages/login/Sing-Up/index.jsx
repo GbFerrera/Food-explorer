@@ -1,46 +1,83 @@
+import { useState } from "react";
+
 import { Container } from "./style";
 import { Input } from "../../../components/input";
 import { Button } from "../../../components/button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-
+import {api} from "../../../services"
 
 export function SingUp() {
 
- return(
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
- <Container>
+  const navigate = useNavigate()
 
-   <header>
-    <img src="src/images/polygon.svg" alt="logo" />
-    <h1>food explorer</h1>
+  function handleSingUp(){
+   if(!name || !email || !password){
 
-   </header>
+   return alert("Preencha todos os campos !")
 
-<main>
+   }
+ 
+    api.post("/users", {name, email, password})
+    .then( () => {
 
- <h2>Crie sua conta</h2>
+      alert("Usuario cadastrado com sucesso")
+      navigate("/")
+    })
+    .catch(error =>{
+      if(error.response){
 
- <form action="">
+        alert(error.response.data.message)
 
-   <Input id="name" label= "Seu nome" placeholder= "Exemplo: Maria da Silva"/>
+      }else{
+        alert("Não foi possivel cadastrar")
+      }
+    })
 
-   <Input id="email" label= "Email" placeholder= "Exemplo: exemplo@exemplo.com.br"/>
-   <Input type="password" id="senha" label= "Senha" placeholder= "No mínimo 6 caracteres"/>
+  }
 
-   <Button title= "Entrar" />
+  return (
+    <Container>
+      <header>
+        <img src="src/images/polygon.svg" alt="logo" />
+        <h1>food explorer</h1>
+      </header>
 
-   </form>
+      <main>
+        <h2>Crie sua conta</h2>
 
-   <Link to={"/"}>Já tenho uma conta</Link>
+        <form action="">
+          <Input
+            id="name"
+            label="Seu nome"
+            placeholder="Exemplo: Maria da Silva"
+            onChange={e => setName(e.target.value)}
+          />
 
-</main>
- </Container>
+          <Input
+            id="email"
+            label="Email"
+            placeholder="Exemplo: exemplo@exemplo.com.br"
+            onChange={e => setEmail(e.target.value)}
+          />
 
- )
+          <Input
+            type="password"
+            id="senha"
+            label="Senha"
+            placeholder="No mínimo 6 caracteres"
+            onChange={e => setPassword(e.target.value)}
+          />
 
+          <Button type="button" title="Entrar" onClick={handleSingUp} />
+        </form>
 
-
-
-
+        <Link to={"/"}>Já tenho uma conta</Link>
+      </main>
+    </Container>
+  );
 }

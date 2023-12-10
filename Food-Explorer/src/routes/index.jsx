@@ -10,7 +10,7 @@ export function Routes() {
 
   <BrowserRouter>
 
-    <AdmAppRoutes/>
+    <AuthRoutes/>
      
   </BrowserRouter>
 
