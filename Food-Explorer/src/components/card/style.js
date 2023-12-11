@@ -7,6 +7,8 @@ export const Component = styled.div`
 position: relative;
 
 
+
+
 .BgNone{
 
 background: none;

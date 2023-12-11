@@ -35,9 +35,9 @@ export function NavBar() {
 
         <div id="search">
           <div className="itensSearch">
-          <button>
+          
             <img src="src/images/search.svg" alt="Imagem de lupa de pesquisa" />
-          </button>
+          
 
           <Input placeholder="Busque por pratos ou ingredientes" />
         </div>
