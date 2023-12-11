@@ -5,7 +5,7 @@ import theme from './styles/theme'
 import { ThemeProvider } from 'styled-components'
 import GlobalStyle from "./styles/global"
 
-
+import { MyContext } from './myContext'
 
 import { Routes } from './routes' 
 
@@ -17,10 +17,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <ThemeProvider theme={theme}>
 
       <GlobalStyle/>
+ 
+     <MyContext>
 
-      
        <Routes/>
        
+     </MyContext>   
        
     </ThemeProvider>
 
