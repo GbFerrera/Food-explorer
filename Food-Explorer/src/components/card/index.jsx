@@ -2,7 +2,7 @@ import { Component } from "./style";
 import { Button } from "../button";
 
 
-export function Card({img,food,description,price}) {
+export function Card({img,food,description,price, ...rest}) {
 
 return(
 

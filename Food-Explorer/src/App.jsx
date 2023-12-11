@@ -18,11 +18,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
       <GlobalStyle/>
  
-     <MyContext>
+    
 
        <Routes/>
        
-     </MyContext>   
+    
        
     </ThemeProvider>
 
