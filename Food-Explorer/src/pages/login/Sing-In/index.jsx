@@ -1,43 +1,68 @@
+import { useState } from "react";
+
 import { Container } from "./style";
 import { Input } from "../../../components/input";
 import { Button } from "../../../components/button";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 
+import { useAuth } from "../../../hooks/auth"
 
 
 export function SingIn() {
 
- return(
+  const [email,setEmail] = useState("")
+  const [password,setPasword] = useState("")
 
- <Container>
+  const {singIn} = useAuth()
 
-   <header>
-    <img src="src/images/polygon.svg" alt="logo" />
-    <h1>food explorer</h1>
+  function handleSingnIn(){
+    singIn({email,password})
+  }
 
-   </header>
+  return (
 
-<main>
+    <Container>
 
- <h2>Faça login</h2>
+      <header>
+        <img src="src/images/polygon.svg" alt="logo" />
+        <h1>food explorer</h1>
 
- <form action="">
-  
-   <Input id="email" label= "Email" placeholder= "Exemplo: exemplo@exemplo.com.br"/>
-   <Input type="password" id="senha" label= "Senha" placeholder= "No mínimo 6 caracteres"/>
+      </header>
 
-   <Button title= "Entrar" />
+      <main>
 
-   </form>
+        <h2>Faça login</h2>
 
-   <Link to="/register">
-    Criar uma conta
-    </Link>
+        <form>
 
-</main>
- </Container>
+          <Input
+            id="email"
+            label="Email"
+            placeholder="Exemplo: exemplo@exemplo.com.br" 
+            onChange={ e => setEmail(e.target.value)}
+            />
+           
 
- )
+          <Input
+            type="password"
+            id="senha"
+            label="Senha"
+            placeholder="No mínimo 6 caracteres"
+            onChange={ e => setPasword(e.target.value)} 
+            />
+
+          <Button title="Entrar" onclick={handleSingnIn}/>
+
+        </form>
+
+        <Link to="/register">
+          Criar uma conta
+        </Link>
+
+      </main>
+    </Container>
+
+  )
 
 
 
