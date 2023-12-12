@@ -1,3 +1,5 @@
+import {useAuth} from "../../../hooks/auth"
+
 import { Container } from "./style";
 import { Input } from "../../../components/input";
 import { Footer } from "../../../components/footer";
@@ -5,53 +7,31 @@ import { Link } from "react-router-dom";
 
 export function Menu() {
 
-return(
+ const {singOut} = useAuth()
 
-<Container>
+  return (
+    <Container>
+      <header>
+        <Link to={"/"}>
+          <img src="src/images/close.svg" alt="Imagem para fechar Menu" />
+        </Link>
 
+        <p>Menu</p>
+      </header>
 
-  <header> 
-   <Link to={"/"}>
-  <img src="src/images/close.svg" alt="Imagem para fechar Menu" />
-    </Link>
+      <main>
+        <div className="search">
+          <button>
+            <img src="src/images/search.svg" alt="Imagem de lupa de pesquisa" />
+          </button>
 
-  <p>Menu</p>
-  </header>
+          <Input placeholder="Busque por pratos ou ingredientes" />
+        </div>
 
-<main>
- <div className="search">
+        <button>Sair</button>
+      </main>
 
-  <button>
-
-  <img src="src/images/search.svg" alt="Imagem de lupa de pesquisa" />
- </button>
-
-   <Input placeholder= "Busque por pratos ou ingredientes"/>
-
- </div>
-
-  <button type="submit">Sair</button>
-
-</main>
-
-
-<Footer/>
-
-
-
-
-
-</Container>
-
-
-
-
-
-
-)
-
-
-
-
-
+      <Footer />
+    </Container>
+  );
 }

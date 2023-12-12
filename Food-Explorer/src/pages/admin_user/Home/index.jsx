@@ -1,95 +1,149 @@
 import { Container } from "./style";
 import { AdminNavBar } from "../../../components/NavBar-Admin";
 import { CardAdmin } from "../../../components/card-Admin";
-import {Footer} from "../../../components/footer"
+import { Footer } from "../../../components/footer";
 
+export function HomeAdmin() {
+  return (
+    <Container>
+      <AdminNavBar />  
 
-export function HomeAdmin(){
+      <main>
+        <section>
+          <img src="src/images/home/fruits.svg" alt="Frutas decorativas " />
+          <img src="src/images/home/fruits.svg" alt="Frutas decorativas " />
 
-return(
+          <div id="text">
+            <h5>Sabores inigualáveis</h5>
+            <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
+          </div>
+        </section>
 
-  <Container>
+        <p className="category">Refeições</p>
 
-   <AdminNavBar/>
+        <div className="cards">
+          <CardAdmin
+            img="src/images/card/foods/salada.svg"
+            food="Salada Ravanello >"
+            description="A melhorzinha que ta tendo bb"
+            price={"49,97"}
+          />
+          <CardAdmin
+            img="src/images/card/foods/salada.svg"
+            food="Salada Ravanello >"
+            description="A melhorzinha que ta tendo bb"
+            price={"49,97"}
+          />
+          <CardAdmin
+            img="src/images/card/foods/salada.svg"
+            food="Salada Ravanello >"
+            description="A melhorzinha que ta tendo bb"
+            price={"49,97"}
+          />
+          <CardAdmin
+            img="src/images/card/foods/salada.svg"
+            food="Salada Ravanello >"
+            description="A melhorzinha que ta tendo bb"
+            price={"49,97"}
+          />
+          <CardAdmin
+            img="src/images/card/foods/salada.svg"
+            food="Salada Ravanello >"
+            description="A melhorzinha que ta tendo bb"
+            price={"49,97"}
+          />
+          <CardAdmin
+            img="src/images/card/foods/salada.svg"
+            food="Salada Ravanello >"
+            description="A melhorzinha que ta tendo bb"
+            price={"49,97"}
+          />
+        </div>
 
-<main> 
+        <p className="category">Sobremesas</p>
 
-   <section>
+        <div className="cards">
+          <CardAdmin
+            img="src/images/card/foods/salada.svg"
+            food="Salada Ravanello >"
+            description="A melhorzinha que ta tendo bb"
+            price={"49,97"}
+          />
+          <CardAdmin
+            img="src/images/card/foods/salada.svg"
+            food="Salada Ravanello >"
+            description="A melhorzinha que ta tendo bb"
+            price={"49,97"}
+          />
+          <CardAdmin
+            img="src/images/card/foods/salada.svg"
+            food="Salada Ravanello >"
+            description="A melhorzinha que ta tendo bb"
+            price={"49,97"}
+          />
+          <CardAdmin
+            img="src/images/card/foods/salada.svg"
+            food="Salada Ravanello >"
+            description="A melhorzinha que ta tendo bb"
+            price={"49,97"}
+          />
+          <CardAdmin
+            img="src/images/card/foods/salada.svg"
+            food="Salada Ravanello >"
+            description="A melhorzinha que ta tendo bb"
+            price={"49,97"}
+          />
+          <CardAdmin
+            img="src/images/card/foods/salada.svg"
+            food="Salada Ravanello >"
+            description="A melhorzinha que ta tendo bb"
+            price={"49,97"}
+          />
+        </div>
 
-    <img src="src/images/home/fruits.svg" alt="Frutas decorativas " />
-    <img src="src/images/home/fruits.svg" alt="Frutas decorativas " />
+        <p className="category">Bebidas</p>
 
+        <div className="cards">
+          <CardAdmin
+            img="src/images/card/foods/salada.svg"
+            food="Salada Ravanello >"
+            description="A melhorzinha que ta tendo bb"
+            price={"49,97"}
+          />
+          <CardAdmin
+            img="src/images/card/foods/salada.svg"
+            food="Salada Ravanello >"
+            description="A melhorzinha que ta tendo bb"
+            price={"49,97"}
+          />
+          <CardAdmin
+            img="src/images/card/foods/salada.svg"
+            food="Salada Ravanello >"
+            description="A melhorzinha que ta tendo bb"
+            price={"49,97"}
+          />
+          <CardAdmin
+            img="src/images/card/foods/salada.svg"
+            food="Salada Ravanello >"
+            description="A melhorzinha que ta tendo bb"
+            price={"49,97"}
+          />
+          <CardAdmin
+            img="src/images/card/foods/salada.svg"
+            food="Salada Ravanello >"
+            description="A melhorzinha que ta tendo bb"
+            price={"49,97"}
+          />
+          <CardAdmin
+            img="src/images/card/foods/salada.svg"
+            food="Salada Ravanello >"
+            description="A melhorzinha que ta tendo bb"
+            price={"49,97"}
+          />
+        </div>
+      </main>
 
-   <div id="text">
-    <h5>Sabores inigualáveis</h5>
-    <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
-
-</div>
-
-   </section>
-
-
-
-
- <p className="category">Refeições</p>
-
-  <div className="cards">
-
-  
-
-   <CardAdmin img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
-   <CardAdmin img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
-   <CardAdmin img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
-   <CardAdmin img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
-   <CardAdmin img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
-   <CardAdmin img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
-
-   
- </div>
-
- <p className="category">Sobremesas</p>
-
-<div className="cards">
-
-
-
-  <CardAdmin img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
-   <CardAdmin img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
-   <CardAdmin img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
-   <CardAdmin img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
-   <CardAdmin img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
-   <CardAdmin img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
-
-   
-</div>
-
-<p className="category">Bebidas</p>
-
-<div className="cards">
-
-<CardAdmin img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
-   <CardAdmin img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
-   <CardAdmin img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
-   <CardAdmin img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
-   <CardAdmin img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
-   <CardAdmin img="src/images/card/foods/salada.svg" food= "Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"}/>
-
-   
-</div>
-
-
-
-</main>
-
-<Footer/>
-
-
-
-
-</Container>
-)
-
-
-
-
+      <Footer />
+    </Container>
+  );
 }

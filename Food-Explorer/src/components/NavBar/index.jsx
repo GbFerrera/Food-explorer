@@ -1,9 +1,14 @@
+import {useAuth} from "../../hooks/auth"
+
 import { Component } from "./style";
 import { Input } from "../input";
 import { Button } from "../button";
 import { Link } from "react-router-dom";
 
 export function NavBar() {
+const {singOut} = useAuth()
+
+
   return (
     <Component>
       <div className="mobile">
@@ -49,7 +54,7 @@ export function NavBar() {
 
       </button>
 
-       <button id="LogOut">
+       <button id="LogOut" onClick={singOut}>
           <img src="src/images/navBar/logOut.svg" alt="" />
         </button>
 

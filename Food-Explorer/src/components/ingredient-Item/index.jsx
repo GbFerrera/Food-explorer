@@ -1,8 +1,10 @@
 
-
 import { Component } from './style'
 
 export function IngredientItem({ isNew, value, onClick, ...rest }) {
+
+
+
   return (
     <Component isNew={isNew}>
       <input

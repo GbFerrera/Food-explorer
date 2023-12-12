@@ -13,11 +13,11 @@ export function SingIn() {
   const [email,setEmail] = useState("")
   const [password,setPasword] = useState("")
 
-   const { singIn } = useAuth()
+   const { signIn } = useAuth()
 
   function handleSingnIn(){
   
-    singIn({email,password})
+    signIn({email,password})
   }
 
   return (

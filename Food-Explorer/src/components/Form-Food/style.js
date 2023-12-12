@@ -82,6 +82,8 @@ textarea {
   
   #ingredients{
 
+    flex-wrap: wrap;
+
    input{
   padding: 0;
    }
@@ -98,6 +100,7 @@ textarea {
 
 #widhtIngredient{
   width: 100%;
+  
 }
   
 }

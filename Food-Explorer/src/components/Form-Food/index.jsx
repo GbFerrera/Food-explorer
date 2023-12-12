@@ -2,7 +2,23 @@ import { Component } from "./style";
 import { Button } from "../button";
 import { IngredientItem } from "../ingredient-Item";
 
+import { useState } from "react";
+
 export function FormFood() {
+  const [ingredient, setIngredient] = useState([]);
+  const [newIngredient, setNewIngredient] = useState("");
+
+  function handleAddIngredient() {
+    setIngredient((prevState) => [...prevState, newIngredient]);
+    setNewIngredient("");
+  }
+
+  function handleRemoveIngredient(deleted) {
+    setIngredient((prevState) =>
+      prevState.filter((ingredient) => ingredient !== deleted)
+    );
+  }
+
   return (
     <Component>
       <section>
@@ -10,12 +26,10 @@ export function FormFood() {
           <div className="flex">
             <label htmlFor="image">Imagem do prato</label>
 
-           <label htmlFor="image" id="labelUpdate">
-            <input id="image" type="file" />
-
-            <img src="src/images/update.svg" alt="" />
-            Selecione imagem
-            
+            <label htmlFor="image" id="labelUpdate">
+              <input id="image" type="file" />
+              <img src="src/images/update.svg" alt="" />
+              Selecione imagem
             </label>
           </div>
 
@@ -43,9 +57,20 @@ export function FormFood() {
             <label htmlFor="ingredients">Ingredientes</label>
 
             <div id="ingredients">
-
-            <IngredientItem value="Pão" />
-            <IngredientItem isNew placeholder="Adicionar" />
+              {ingredient.map((ingredient, index) => (
+                <IngredientItem
+                  key={String(index)}
+                  value={ingredient}
+                  onClick={() => handleRemoveIngredient(ingredient)}
+                />
+              ))}
+              <IngredientItem
+                isNew
+                placeholder="Adicionar"
+                value={newIngredient}
+                onChange={(e) => setNewIngredient(e.target.value)}
+                onClick={handleAddIngredient}
+              />
             </div>
           </div>
 
