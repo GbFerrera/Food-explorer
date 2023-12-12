@@ -10,7 +10,7 @@ function AuthProvider({children}){
 
   const [data,setData] = useState({})
 
-async function singnIn({email, password}){
+async function singIn({email, password}){
 
   try{
 
@@ -34,7 +34,7 @@ async function singnIn({email, password}){
 }
  
     return(
-    <AuthContext.Provider value={{singnIn , user: data.user}}>
+    <AuthContext.Provider value={{singIn , user: data.user}}>
 
      {children}
 

@@ -13,9 +13,10 @@ export function SingIn() {
   const [email,setEmail] = useState("")
   const [password,setPasword] = useState("")
 
-  const {singIn} = useAuth()
+   const { singIn } = useAuth()
 
   function handleSingnIn(){
+  
     singIn({email,password})
   }
 
@@ -51,7 +52,7 @@ export function SingIn() {
             onChange={ e => setPasword(e.target.value)} 
             />
 
-          <Button title="Entrar" onclick={handleSingnIn}/>
+          <Button type="button" title="Entrar" onClick={handleSingnIn}/>
 
         </form>
 
