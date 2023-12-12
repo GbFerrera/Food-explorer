@@ -94,15 +94,15 @@ export function Card({ img, food, description, price, ...rest }) {
 
                     <div id="amountCard">
 
-                        <button className="BgNone">
+                        <button className="BgNone" onClick={decreaseAmount}>
 
                             <img src="src/images/card/less.svg" alt="" />
 
                         </button>
 
-                        <p> 01 </p>
+                        <p>{String(amount).padStart(2, '0')}</p>
 
-                        <button className="BgNone">
+                        <button className="BgNone" onClick={increaseAmount}>
 
                             <img src="src/images/card/more.svg" alt="" />
 
