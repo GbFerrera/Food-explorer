@@ -10,14 +10,17 @@ export function Routes() {
 
   const { user } = useAuth()
 
+  const isAdmin = user && user.email === "gabriel@gmail.com";
+
+
  return (
 
   <BrowserRouter>
   
     
-    {/* {user ? <AppRoutes/> : <AuthRoutes/>} */}
+  {isAdmin ? <AdmAppRoutes /> : user ? <AppRoutes /> : <AuthRoutes />}
 
-    <AdmAppRoutes/>
+    
      
   </BrowserRouter>
 
