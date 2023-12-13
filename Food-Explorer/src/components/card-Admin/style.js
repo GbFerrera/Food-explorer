@@ -12,6 +12,11 @@ export const Component = styled.div`
     color: #82f3ff;
   }
 
+  a{
+    position: relative;
+  }
+  
+
   @media (max-width: 430px) {
     .hideInclud {
       display: none;
@@ -48,7 +53,7 @@ export const Component = styled.div`
     #penEdit {
       position: absolute;
       right: 16px;
-      top: 16px;
+      
 
       width: 24px;
       height: 24px;
@@ -76,7 +81,6 @@ export const Component = styled.div`
     }
 
     #penEdit {
-      top: 16px;
       right: 16px;
       position: absolute;
     }

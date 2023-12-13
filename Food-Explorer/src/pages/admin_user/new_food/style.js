@@ -127,6 +127,7 @@ width: 100%;
 #ingredients{
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     padding: 4px 8px;
     gap: 16px;
     background-color: ${({theme}) => theme.COLORS.dark_dark_800};

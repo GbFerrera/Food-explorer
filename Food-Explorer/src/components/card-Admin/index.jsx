@@ -5,7 +5,7 @@ export function CardAdmin({ img, food, description, price }) {
   return (
     <Component>
       <div className="itens">
-        <Link to={"/new"} className="BgNone" >
+        <Link to={"/edit"} className="BgNone" >
           <img
             id="penEdit"
             src="src/images/pen.svg"

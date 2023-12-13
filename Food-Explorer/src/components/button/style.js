@@ -1,3 +1,4 @@
+
 import styled from "styled-components";
 
 export const Container = styled.button`
@@ -11,7 +12,9 @@ export const Container = styled.button`
   font-family: "Poppins", sans-serif;
   font-weight: 500;
 
-
+   display: flex;
+   align-items: center;
+   place-content: center;
 
 
 

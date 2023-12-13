@@ -28,7 +28,7 @@ export function Menu() {
           <Input placeholder="Busque por pratos ou ingredientes" />
         </div>
 
-        <button>Sair</button>
+        <button onClick={singOut}>Sair</button>
       </main>
 
       <Footer />

@@ -35,7 +35,7 @@ export function AdminNavBar() {
             />
           </div>
         </div>
-        <Button id="btnNew" title={"Novo prato"} />
+        <Button to={"/new"} id="btnNew" title={"Novo prato"} />
 
         <button id="LogOut" onClick={singOut}>
           <img src="src/images/navBar/logOut.svg" alt="" />

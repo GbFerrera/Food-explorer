@@ -7,7 +7,7 @@ export function BtnBack(){
 
   return (
 
-    <Component>
+    <Component to={"/"}>
 
   <img src="src/images/navBar/btnBack.svg" alt="" />
   voltar

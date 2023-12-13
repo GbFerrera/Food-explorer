@@ -9,9 +9,9 @@ export function EditFood() {
     <Container>
       <AdminNavBar />
 
-      <div className="new">
+      <div className="edit">
         <BtnBack />
-        <h1>Novo Prato</h1>
+        <h1>Editar Prato</h1>
       </div>
       <FormEditFood />
 

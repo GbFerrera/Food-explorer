@@ -43,7 +43,7 @@ export const Container = styled.div`
       }
     }
 
-    .new {
+    .edit {
       padding: 10px 32px 24px;
 
       button {
@@ -129,7 +129,7 @@ export const Container = styled.div`
       }
     }
 
-    .new {
+    .edit {
       padding: 46px 123px 0;
 
       button {
