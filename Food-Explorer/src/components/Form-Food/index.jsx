@@ -3,10 +3,21 @@ import { Button } from "../button";
 import { IngredientItem } from "../ingredient-Item";
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { api } from "../../services";
 
 export function FormFood() {
+
+   const[title,setTitle] = useState("")
+   const[description,setDescription] = useState("")
+   const[price,setPrice] = useState("")
+   const[category,setCategory] = useState("")
+   const [avatar, setAvatar] = useState(null);
+
   const [ingredient, setIngredient] = useState([]);
   const [newIngredient, setNewIngredient] = useState("");
+
+  const navigate = useNavigate()
 
   function handleAddIngredient() {
     setIngredient((prevState) => [...prevState, newIngredient]);
@@ -19,6 +30,26 @@ export function FormFood() {
     );
   }
 
+  async function handleNewFood(){
+
+    await api.post("/foods" , {
+     avatar, 
+     title,
+     category,
+     ingredient,
+     price,
+     description
+
+    })
+     
+    console.log(handleAddIngredient) 
+    alert("Prato criado com sucesso!")
+    navigate("/")
+
+  }
+
+
+
   return (
     <Component>
       <section>
@@ -27,7 +58,11 @@ export function FormFood() {
             <label htmlFor="image">Imagem do prato</label>
 
             <label htmlFor="image" id="labelUpdate">
-              <input id="image" type="file" />
+              <input 
+              id="image" 
+              type="file" 
+              onChange={e=> setAvatar(e.target.files[0])}
+              />
               <img src="src/images/update.svg" alt="" />
               Selecione imagem
             </label>
@@ -36,16 +71,23 @@ export function FormFood() {
           <div className="nameWidht">
             <div className="flex">
               <label htmlFor="name">Nome</label>
-              <input id="name" type="text" placeholder="Ex.: Salada Ceasar" />
+              <input 
+              id="name" 
+              type="text" 
+              placeholder="Ex.: Salada Ceasar" 
+              onChange={e => setTitle(e.target.value)}
+              />
+
             </div>
           </div>
 
           <div className="flex">
             <label htmlFor="category">Categoria</label>
-            <select name="opçoes" id="category">
-              <option value="opcao1">Refeições</option>
-              <option value="opcao2">Sobremesas</option>
-              <option value="opcao3">Bebidas</option>
+            <select name="opçoes" id="category" onChange={e => setCategory(e.target.value)}>
+             <option value="">selecione a categoria</option>
+              <option value="Refeições">Refeições</option>
+              <option value="Sobremesas">Sobremesas</option>
+              <option value="Bebidas">Bebidas</option>
             </select>
           </div>
         </div>
@@ -77,7 +119,13 @@ export function FormFood() {
           <div className="flex">
             <label htmlFor="price">Preço</label>
 
-            <input id="price" placeholder="R$ 00,00" type="number" />
+            <input 
+            id="price" 
+            placeholder="R$ 00,00" 
+            type="text" 
+            onChange={e => setPrice(e.target.value)}
+            />
+            
           </div>
         </div>
       </section>
@@ -89,10 +137,16 @@ export function FormFood() {
         cols="30"
         rows="7"
         placeholder="A Salada César é uma opção refrescante para o verão."
-      ></textarea>
+        onChange={e => setDescription(e.target.value)}
+        />
 
       <div id="btnSave">
-        <Button className="btn" title={"Salvar alterações"} />
+        <Button 
+        onClick={handleNewFood} 
+        className="btn"
+         title={"Salvar alterações"} 
+         type= "button"
+         />
       </div>
     </Component>
   );
