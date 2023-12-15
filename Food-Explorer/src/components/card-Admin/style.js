@@ -52,8 +52,7 @@ export const Component = styled.div`
 
     #penEdit {
       position: absolute;
-      right: 16px;
-      
+      left: 45px;
 
       width: 24px;
       height: 24px;

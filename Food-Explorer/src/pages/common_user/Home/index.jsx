@@ -2,15 +2,22 @@ import { Container } from "./style";
 import { NavBar } from "../../../components/NavBar";
 import { Card } from "../../../components/card"
 import { Footer } from "../../../components/footer"
+import { useState } from "react";
 
 
 export function Home() {
+
+   const [totalAmount, setTotalAmount] = useState(0);
+
+  const handleIncludeAmount = (amount) => {
+    setTotalAmount((prevTotal) => prevTotal + amount);
+  };
 
    return (
 
       <Container>
 
-         <NavBar />
+         <NavBar totalAmount={totalAmount} setTotalAmount={setTotalAmount}/>
 
          <main>
 
@@ -27,7 +34,7 @@ export function Home() {
 
             </section>
 
-
+            
 
 
             <p className="category">Refeições</p>
@@ -36,12 +43,12 @@ export function Home() {
 
 
 
-               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} />
-               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} />
-               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} />
-               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} />
-               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} />
-               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} />
+               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} onIncludeAmount={handleIncludeAmount}/>
+               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} onIncludeAmount={handleIncludeAmount}/>
+               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} onIncludeAmount={handleIncludeAmount}/>
+               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} onIncludeAmount={handleIncludeAmount}/>
+               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} onIncludeAmount={handleIncludeAmount}/>
+               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} onIncludeAmount={handleIncludeAmount}/>
 
 
 

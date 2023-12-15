@@ -8,6 +8,16 @@ export const Container = styled.div`
     display: none;
   }
 
+
+  .cards:hover>:not(:hover){
+
+opacity: .4;
+transform: scale(0.9);
+transition: .85s;
+
+
+}
+
   @media (max-width: 430px) {
     min-width: 425px;
 

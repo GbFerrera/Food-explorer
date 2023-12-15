@@ -4,7 +4,7 @@ import { Component } from "./style";
 import { Button } from "../button";
 
 
-export function Card({ img, food, description, price, ...rest }) {
+export function Card({ img, food, description, price, onIncludeAmount, ...rest }) {
 
     const [amount, setAmount] = useState(1)
 
@@ -25,6 +25,10 @@ export function Card({ img, food, description, price, ...rest }) {
     const toggleFavorite = () => {
         setIsFavorited(!isFavorited);
     };
+
+    const handleIncludeAmount = () => {
+        onIncludeAmount(amount);
+      };
 
 
 
@@ -82,7 +86,7 @@ export function Card({ img, food, description, price, ...rest }) {
 
                         </div>
 
-                        <Button id="include" title="incluir" />
+                        <Button onClick={handleIncludeAmount}  id="include" title="incluir" />
 
 
                     </div>
@@ -111,7 +115,7 @@ export function Card({ img, food, description, price, ...rest }) {
 
                     </div>
 
-                    <Button id="include" title="incluir" />
+                    <Button onClick={handleIncludeAmount} id="include" title="incluir" />
 
 
                 </div>

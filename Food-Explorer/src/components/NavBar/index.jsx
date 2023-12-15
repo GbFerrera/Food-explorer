@@ -1,12 +1,14 @@
 import {useAuth} from "../../hooks/auth"
+import { useState } from "react";
 
 import { Component } from "./style";
 import { Input } from "../input";
 import { Button } from "../button";
 import { Link } from "react-router-dom";
 
-export function NavBar() {
+export function NavBar({ totalAmount, setTotalAmount }) {
 const {singOut} = useAuth()
+
 
 
   return (
@@ -27,7 +29,7 @@ const {singOut} = useAuth()
       <button>
         <img src="src/images/navBar/receipt.svg" alt="Recibo de pedidos" />
     </button>
-        <span>0</span>
+        <span>{totalAmount}</span>
       </div>
 
       <div className="desktop">
@@ -50,7 +52,7 @@ const {singOut} = useAuth()
       <button id="requests">
         <img src="src/images/navBar/receipt.svg" alt="Recibo de pedidos" />
     
-        <p>Pedidos (<span>1</span>)</p>
+        <p>Pedidos (<span>{totalAmount}</span>)</p>
 
       </button>
 

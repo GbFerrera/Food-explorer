@@ -4,6 +4,7 @@ import { IngredientItem } from "../ingredient-Item";
 
 import { useState } from "react";
 
+
 export function FormEditFood() {
   const [ingredient, setIngredient] = useState([]);
   const [newIngredient, setNewIngredient] = useState("");
@@ -43,9 +44,10 @@ export function FormEditFood() {
           <div className="flex">
             <label htmlFor="category">Categoria</label>
             <select name="opçoes" id="category">
-              <option value="opcao1">Refeições</option>
-              <option value="opcao2">Sobremesas</option>
-              <option value="opcao3">Bebidas</option>
+            <option value="Refeições">Selecione a categoria</option>
+              <option value="Refeições">Refeições</option>
+              <option value="Sobremesas">Sobremesas</option>
+              <option value="Bebidas">Bebidas</option>
             </select>
           </div>
         </div>

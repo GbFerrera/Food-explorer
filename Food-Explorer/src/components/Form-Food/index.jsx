@@ -84,7 +84,7 @@ export function FormFood() {
           <div className="flex">
             <label htmlFor="category">Categoria</label>
             <select name="opçoes" id="category" onChange={e => setCategory(e.target.value)}>
-             <option value="">selecione a categoria</option>
+             <option value="">Selecione a categoria</option>
               <option value="Refeições">Refeições</option>
               <option value="Sobremesas">Sobremesas</option>
               <option value="Bebidas">Bebidas</option>

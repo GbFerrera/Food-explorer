@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 export const Component = styled(Link)`
 
   display: flex;
+  width: 100px;
   color: #E1E1E6 ;
   align-items: center;
   font-size: 24px;

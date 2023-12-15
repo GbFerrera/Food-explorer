@@ -7,9 +7,9 @@ export function MenuAdmin() {
   return (
     <Container>
       <header>
-        <button>
+        <Link to={"/"}>
           <img src="src/images/close.svg" alt="Imagem para fechar Menu" />
-        </button>
+        </Link>
 
         <p>Menu</p>
       </header>

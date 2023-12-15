@@ -4,8 +4,15 @@ import { Button } from "../../components/button";
 import { useAuth } from "../../hooks/auth";
 
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export function AdminNavBar() {
+
+  const navigate = useNavigate()
+
+  function navigateNew(){
+    navigate("/new")
+  }
   const { singOut } = useAuth();
   return (
     <Component>
@@ -35,7 +42,11 @@ export function AdminNavBar() {
             />
           </div>
         </div>
-        <Button to={"/new"} id="btnNew" title={"Novo prato"} />
+        <Button
+         id="btnNew" 
+         title={"Novo prato"} 
+         onClick={navigateNew}
+         />
 
         <button id="LogOut" onClick={singOut}>
           <img src="src/images/navBar/logOut.svg" alt="" />
