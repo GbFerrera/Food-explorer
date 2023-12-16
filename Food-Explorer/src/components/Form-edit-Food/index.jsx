@@ -1,13 +1,35 @@
+import { useParams, useNavigate} from "react-router-dom"
+
+
 import { Component } from "./style";
 import { Button } from "../button";
 import { IngredientItem } from "../ingredient-Item";
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
+
+import { api } from "../../services"
 
 
-export function FormEditFood() {
+
+import update from "../../images/update.svg"
+
+
+
+ export function FormEditFood() {
+
+  const navigate = useNavigate()
+  
   const [ingredient, setIngredient] = useState([]);
   const [newIngredient, setNewIngredient] = useState("");
+
+   const[title,setTitle] = useState("")
+   const[description,setDescription] = useState("")
+   const[price,setPrice] = useState("")
+   const[category,setCategory] = useState("")
+   const [avatar,setAvatar] = useState(null)
+
+   
+  const params = useParams()
 
   function handleAddIngredient() {
     setIngredient((prevState) => [...prevState, newIngredient]);
@@ -20,6 +42,84 @@ export function FormEditFood() {
     );
   }
 
+
+  async function handleSaveChanges(){
+
+    if(!avatar) {
+      return alert("Você não inseriu a imagem do prato")
+    }
+
+    if(!title) {
+      return alert("Você não inseriu o titulo do prato")
+    }
+    if(!category) {
+      return alert("Você não inseriu a categoria do prato")
+    }
+
+    if(ingredient.length < 1) {
+      return alert("Você precisa pelo menos inserir um ingrediente")
+    }
+
+    if(!price) {
+      return alert("Você não inseriu o valor do prato")
+    }
+
+    if(!description) {
+      return alert("Você não inseriu a descrição do prato")
+    }
+
+   const formData = new FormData()
+
+   formData.append("avatar",avatar)
+   formData.append("title", title)
+   formData.append("description", description)
+   formData.append("category", category)
+   formData.append("price", price)
+
+   const ingredientsArray = Array.isArray(ingredient) ? ingredient : [ingredient];
+
+   ingredientsArray.forEach((ingredientItem, index) => {
+    formData.append(`ingredient[${index}]`, ingredientItem);
+  });
+   
+
+
+   await api.put(`/foods/${params.food_id}`, formData)
+   .then(alert("atualizado com sucesso"))
+   .catch(error => {
+    if(error.response){
+      alert(error.response.data.message)
+    }else{
+
+      alert("Erro ao atualizar o prato")
+    }
+
+
+   }
+
+)
+
+  }
+
+
+  async function handleDeleteFood() {
+    
+    const confirm = window.confirm("Deseja realmente deletar esse prato")
+
+    if(confirm) {
+
+      await api.delete(`/foods/${params.id}`)
+
+      alert("Deletado com sucesso")
+
+
+    }
+
+
+
+
+  }
+
   return (
     <Component>
       <section>
@@ -28,8 +128,12 @@ export function FormEditFood() {
             <label htmlFor="image">Imagem do prato</label>
 
             <label htmlFor="image" id="labelUpdate">
-              <input id="image" type="file" />
-              <img src="src/images/update.svg" alt="" />
+              <input 
+              id="image" 
+              type="file" 
+              onChange={e => setAvatar(e.target.files[0])}
+              />
+              <img src={update} alt="" />
               Selecione imagem
             </label>
           </div>
@@ -37,13 +141,18 @@ export function FormEditFood() {
           <div className="nameWidht">
             <div className="flex">
               <label htmlFor="name">Nome</label>
-              <input id="name" type="text" placeholder="Ex.: Salada Ceasar" />
+              <input 
+              id="name" 
+              type="text" 
+              placeholder="Ex.: Salada Ceasar" 
+              onChange={e => setTitle(e.target.value)}
+              />
             </div>
           </div>
 
           <div className="flex">
             <label htmlFor="category">Categoria</label>
-            <select name="opçoes" id="category">
+            <select name="opçoes" id="category" onChange={e => setCategory(e.target.value)}>
             <option value="Refeições">Selecione a categoria</option>
               <option value="Refeições">Refeições</option>
               <option value="Sobremesas">Sobremesas</option>
@@ -79,7 +188,12 @@ export function FormEditFood() {
           <div className="flex">
             <label htmlFor="price">Preço</label>
 
-            <input id="price" placeholder="R$ 00,00" type="number" />
+            <input 
+            id="price" 
+            placeholder="R$ 00,00" 
+            type="text" 
+            onChange={e => setPrice(e.target.value)}
+            />
           </div>
         </div>
       </section>
@@ -91,11 +205,21 @@ export function FormEditFood() {
         cols="30"
         rows="7"
         placeholder="A Salada César é uma opção refrescante para o verão."
-      ></textarea>
+        onChange={e => setDescription(e.target.value)}
+      />
 
       <div id="Buttons">
-        <Button title={"Excluir prato"} />
-        <Button className="btn" title={"Salvar alterações"} />
+        <Button 
+        type="button" 
+        title={"Excluir prato"} 
+        onClick= {handleDeleteFood}
+        />
+        <Button 
+        type={"button"}
+        className="btn" 
+        title={"Salvar alterações"} 
+        onClick={handleSaveChanges}
+        />
       </div>
     </Component>
   );

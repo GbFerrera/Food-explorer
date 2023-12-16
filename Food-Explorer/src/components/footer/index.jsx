@@ -1,31 +1,15 @@
 import { Component } from "./style";
-
+import footerLogo from "../../images/polygon-Footer.svg";
 
 export function Footer() {
+  return (
+    <Component>
+      <div>
+        <img src={footerLogo} alt="Imagem do poligono do footer" />
+        <p>food explorer</p>
+      </div>
 
-return(
-
- <Component>
-
- <div>
-   <img src="src/images/polygon-Footer.svg" alt="Imagem do poligono do footer" />
-   <p>food explorer</p>
-</div>
-
-
-
-<a href="#">© 2023 - Todos os direitos reservados.</a>
-
-
-
- </Component>
-
-
-
-)
-
-
-
-
-
+      <a href="#">© 2023 - Todos os direitos reservados.</a>
+    </Component>
+  );
 }

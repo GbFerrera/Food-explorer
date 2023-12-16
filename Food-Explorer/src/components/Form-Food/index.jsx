@@ -6,13 +6,18 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../services";
 
+import update from "../../images/update.svg"
+
 export function FormFood() {
 
    const[title,setTitle] = useState("")
    const[description,setDescription] = useState("")
    const[price,setPrice] = useState("")
    const[category,setCategory] = useState("")
+   
    const [avatar, setAvatar] = useState(null);
+
+
 
   const [ingredient, setIngredient] = useState([]);
   const [newIngredient, setNewIngredient] = useState("");
@@ -30,28 +35,71 @@ export function FormFood() {
     );
   }
 
+
   async function handleNewFood(){
 
-    await api.post("/foods" , {
-     avatar, 
-     title,
-     category,
-     ingredient,
-     price,
-     description
+    if(!avatar) {
+      return alert("Você não inseriu a imagem do prato")
+    }
 
-    })
-     
-    console.log(handleAddIngredient) 
-    alert("Prato criado com sucesso!")
-    navigate("/")
+    if(!title) {
+      return alert("Você não inseriu o titulo do prato")
+    }
+    if(!category) {
+      return alert("Você não inseriu a categoria do prato")
+    }
+
+    if(ingredient.length < 1) {
+      return alert("Você precisa pelo menos inserir um ingrediente")
+    }
+
+    if(!price) {
+      return alert("Você não inseriu o valor do prato")
+    }
+
+    if(!description) {
+      return alert("Você não inseriu a descrição do prato")
+    }
+
+   const formData = new FormData()
+
+   formData.append("avatar",avatar)
+   formData.append("title", title)
+   formData.append("description", description)
+   formData.append("category", category)
+   formData.append("price", price)
+
+   const ingredientsArray = Array.isArray(ingredient) ? ingredient : [ingredient];
+
+   ingredientsArray.forEach((ingredientItem, index) => {
+    formData.append(`ingredient[${index}]`, ingredientItem);
+  });
+   
+
+
+   await api.post("/foods", formData)
+   .then(alert("Criado com sucesso"), navigate("/"))
+   .catch(error => {
+    if(error.response){
+      alert(error.response.data.message)
+    }else{
+
+      alert("Erro ao criar o prato")
+    }
+
+
+   }
+
+)
 
   }
+
+  
 
 
 
   return (
-    <Component>
+    <Component encType="multipart/form-data">
       <section>
         <div className="lineOne">
           <div className="flex">
@@ -61,9 +109,11 @@ export function FormFood() {
               <input 
               id="image" 
               type="file" 
-              onChange={e=> setAvatar(e.target.files[0])}
+              name="avatar"
+              accept="image/*"
+              onChange={e => setAvatar(e.target.files[0])}
               />
-              <img src="src/images/update.svg" alt="" />
+              <img src={update} alt="" />
               Selecione imagem
             </label>
           </div>

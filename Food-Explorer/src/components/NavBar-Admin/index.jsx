@@ -6,6 +6,12 @@ import { useAuth } from "../../hooks/auth";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
+import logo from "../../images/polygon.svg"
+import logOut from "../../images/navBar/logOut.svg"
+import search from "../../images/navBar/search.svg"
+import options from "../../images/navBar/options.svg"
+
+
 export function AdminNavBar() {
 
   const navigate = useNavigate()
@@ -18,14 +24,14 @@ export function AdminNavBar() {
     <Component>
       <Link to="/menu" id="btnOptions">
         <img
-          src="src/images/navBar/options.svg"
+          src= {options}
           alt="Imagem de opções de menu da Home"
         />
       </Link>
 
       <div className="title">
         <div id="titleMobile">
-          <img src="src/images/polygon.svg" alt="Logo do app" />
+          <img src= {logo} alt="Logo do app" />
           <h1>food explorer</h1>
         </div>
         <p id="adm">admin</p>
@@ -34,7 +40,7 @@ export function AdminNavBar() {
       <div className="wrapper" id="headerDetails">
         <div id="headerSearch">
           <div className="searchItens">
-            <img src="src/images/search.svg" alt="" />
+            <img src={search} alt="" />
 
             <input
               type="text"
@@ -49,7 +55,7 @@ export function AdminNavBar() {
          />
 
         <button id="LogOut" onClick={singOut}>
-          <img src="src/images/navBar/logOut.svg" alt="" />
+          <img src={logOut} alt="" />
         </button>
       </div>
     </Component>

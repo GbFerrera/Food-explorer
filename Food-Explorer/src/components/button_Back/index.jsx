@@ -1,6 +1,6 @@
 import { Component } from "./style";
 
-
+import btnBack from "../../images/navBar/btnBack.svg"
 
 export function BtnBack(){
 
@@ -9,7 +9,7 @@ export function BtnBack(){
 
     <Component to={"/"}>
 
-  <img src="src/images/navBar/btnBack.svg" alt="" />
+  <img src={btnBack} alt="" />
   voltar
 
 

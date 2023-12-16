@@ -6,6 +6,9 @@ import { Input } from "../input";
 import { Button } from "../button";
 import { Link } from "react-router-dom";
 
+import search from "../../images/navBar/search.svg"
+
+
 export function NavBar({ totalAmount, setTotalAmount }) {
 const {singOut} = useAuth()
 
@@ -43,7 +46,7 @@ const {singOut} = useAuth()
         <div id="search">
           <div className="itensSearch">
           
-            <img src="src/images/search.svg" alt="Imagem de lupa de pesquisa" />
+            <img src={search} alt="Imagem de lupa de pesquisa" />
           
 
           <Input placeholder="Busque por pratos ou ingredientes" />
