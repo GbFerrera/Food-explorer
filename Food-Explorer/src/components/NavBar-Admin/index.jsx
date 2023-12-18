@@ -30,10 +30,12 @@ export function AdminNavBar() {
       </Link>
 
       <div className="title">
+        <Link to={"/"}>
         <div id="titleMobile">
           <img src= {logo} alt="Logo do app" />
           <h1>food explorer</h1>
         </div>
+        </Link>
         <p id="adm">admin</p>
       </div>
 
