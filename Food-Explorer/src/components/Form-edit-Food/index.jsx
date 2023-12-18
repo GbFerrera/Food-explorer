@@ -84,7 +84,7 @@ import update from "../../images/update.svg"
    
 
 
-   await api.put(`/foods/${params.food_id}`, formData)
+   await api.put(`/foods/${params.id}`, formData)
    .then(alert("atualizado com sucesso"))
    .catch(error => {
     if(error.response){
