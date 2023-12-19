@@ -68,6 +68,13 @@ right: 16px;
 top: 16px;
 }
 
+#foodImg{
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid wheat;
+}
 
 #amountCard{
 display: flex;
@@ -113,6 +120,9 @@ gap: 14px ;
    margin: auto;
    width: 176px;
    height: 176px;
+   object-fit: cover;
+   border-radius: 50%;
+   border: 1px white solid;
   }
 
   #foodName{

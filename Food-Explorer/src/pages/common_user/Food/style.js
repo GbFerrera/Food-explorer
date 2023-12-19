@@ -36,6 +36,8 @@ gap: 24px;
   width: 264px;
  height: 264px;
  margin: auto;
+ border-radius: 50%;
+  object-fit: cover;
  }
 
  .recipe{
@@ -163,11 +165,14 @@ main{
  } 
 
 #imgFood{
+
+  border-radius: 50%;
+  object-fit: cover;
   width: 390px;
-height: 389px;
+  height: 389px;
 
 }
-
+ 
  .recipe{
   display: flex;
   flex-direction: column;

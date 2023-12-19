@@ -1,10 +1,49 @@
+import { api } from "../../../services";
+
 import { Container } from "./style";
 import { AdminNavBar } from "../../../components/NavBar-Admin";
 import { Footer } from "../../../components/footer";
 import { Button } from "../../../components/button";
 import { BtnBack } from "../../../components/button_Back";
 
+import { useState, useEffect } from "react";
+
+import { useParams } from "react-router-dom";
+
 export function AdminFood() {
+
+  const params = useParams()
+  const [foodData, setFoodData] = useState({
+    avatar: '',
+    title: '',
+    description: '',
+    ingredients: [],
+  });
+
+  
+
+  useEffect(() => {
+
+   api.get(`/foods/${params.id}`)
+   .then(response => {
+
+    const {avatar,title,description,ingredients} = response.data
+
+    const avatarUrl = `http://localhost:7777/files/${avatar}`;
+    setFoodData( {
+      avatar:avatarUrl,
+      title,
+      description,
+      ingredients})
+
+   }).catch(error =>  {
+    console.error("erro ao obter dados do produto", error)
+   })
+
+    
+  },[params.id])
+
+
   return (
     <Container>
       <AdminNavBar />
@@ -15,35 +54,33 @@ export function AdminFood() {
         <div className="detailsFood">
           <img
             id="imgFood"
-            src="src/images/card/foods/salada.svg"
+            src={foodData.avatar}
             alt="imagem do prato"
           />
 
           <div className="detailsRequest">
             <div className="recipe">
-              <h2>Salada Ravanello</h2>
+              <h2>{foodData.title}</h2>
 
               <p id="description">
-                Rabanetes, folhas verdes e molho agridoce salpicados com
-                gergelim. O pão naan dá um toque especial.
+              {foodData.description}
               </p>
 
               <section>
-                <div id="ingredient">alface</div>
-                <div id="ingredient">alface</div>
-                <div id="ingredient">alface</div>
-                <div id="ingredient">alface</div>
-                <div id="ingredient">alface</div>
-                <div id="ingredient">alface</div>
-                <div id="ingredient">alface</div>
+                {foodData.ingredients.map((ingredient, index) => (
+                  <div key={index} id="ingredient">{ingredient}</div>
+                ))}
               </section>
             </div>
           
            
-            <Button id="editBtn" title="Editar Prato">
+            <Button 
+            id="editBtn" 
+            title="Editar Prato"
+            />
               
                    
-            </Button>
+            
             
           </div>
         </div>

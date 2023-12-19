@@ -12,7 +12,7 @@ return(
 
   <Route path="/" element={<Home/>}/>
   <Route path="/menu" element={<Menu/>}/>
-  <Route path="/Food" element={<Food/>}/>
+  <Route path="/Food/:id" element={<Food/>}/>
 
 </Routes>
 

@@ -12,9 +12,13 @@ export function CardAdmin({ img, food, description, price }) {
             alt="icone de editar comida"
           />
         </Link>
-        <img id="foodImg" src={img} />
 
+        
+        <img id="foodImg" src={img} />
+        
+        <Link to={"/food"}>
         <p id="foodName">{food}</p>
+        </Link> 
         <p id="descriptionCard">{description}</p>
         <p id="price"> R$ {price} </p>
       </div>

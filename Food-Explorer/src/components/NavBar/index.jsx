@@ -7,6 +7,9 @@ import { Button } from "../button";
 import { Link } from "react-router-dom";
 
 import search from "../../images/navBar/search.svg";
+import logo from "../../images/polygon.svg"
+import receipt from "../../images/navBar/receipt.svg"
+import logOut from "../../images/navBar/logOut.svg"
 
 export function NavBar({ totalAmount, setTotalAmount }) {
   const { singOut } = useAuth();
@@ -23,13 +26,13 @@ export function NavBar({ totalAmount, setTotalAmount }) {
 
         <Link to={"/"}>
           <div className="title">
-            <img src="src/images/polygon.svg" alt="Logo do app" />
+            <img src={logo} alt="Logo do app" />
             <h1>food explorer</h1>
           </div>
         </Link>
 
         <button>
-          <img src="src/images/navBar/receipt.svg" alt="Recibo de pedidos" />
+          <img src= {receipt} alt="Recibo de pedidos" />
         </button>
         <span>{totalAmount}</span>
       </div>
@@ -37,7 +40,7 @@ export function NavBar({ totalAmount, setTotalAmount }) {
       <div className="desktop">
         <Link to={"/"}>
           <div className="title">
-            <img src="src/images/polygon.svg" alt="Logo do app" />
+            <img src={logo} alt="Logo do app" />
             <h1>food explorer</h1>
           </div>
         </Link>
@@ -50,7 +53,7 @@ export function NavBar({ totalAmount, setTotalAmount }) {
           </div>
         </div>
         <button id="requests">
-          <img src="src/images/navBar/receipt.svg" alt="Recibo de pedidos" />
+          <img src={receipt} alt="Recibo de pedidos" />
 
           <p>
             Pedidos (<span>{totalAmount}</span>)
@@ -58,7 +61,7 @@ export function NavBar({ totalAmount, setTotalAmount }) {
         </button>
 
         <button id="LogOut" onClick={singOut}>
-          <img src="src/images/navBar/logOut.svg" alt="" />
+          <img src={logOut} alt="" />
         </button>
       </div>
     </Component>

@@ -109,6 +109,10 @@ background: none;
 
 #search{
 
+  img{
+    margin-top: 8px;
+  }
+
  display :flex ;
  align-items: center;
  justify-content: center;

@@ -1,115 +1,114 @@
+import { api } from "../../../services";
+
 import { Container } from "./style";
 import { NavBar } from "../../../components/NavBar";
 import { Footer } from "../../../components/footer";
+import {BtnBack} from "../../../components/button_Back"
+
+import { useState, useEffect } from "react";
+
+import { useParams } from "react-router-dom";
+
+import less from "../../../images/card/less.svg"
+import more from "../../../images/card/more.svg"
+import receipt from "../../../images/navBar/receipt.svg"
 
 export function Food() {
 
-
-return(
-
-<Container>
-
-<NavBar/>
-
-<main>
-
-<button id="btnBack">
-
-  <img src="src/images/navBar/btnBack.svg" alt="" />
-  voltar
-</button>
-
-
- <div className="detailsFood">
-
- <img id="imgFood" src="src/images/card/foods/salada.svg" alt="imagem do prato" />
-
- <div className="detailsRequest">
-
-<div className="recipe">
-  
-  <h2>Salada Ravanello</h2>
-
-  <p id="description">Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.
-   O pão naan dá um toque especial.</p>
-
-  <section>
-
-<div className="ingredients">
-  
-    <div id="ingredient">alface</div>
-    <div id="ingredient">alface</div>
-    <div id="ingredient">alface</div>
-    <div id="ingredient">alface</div>
-    <div id="ingredient">alface</div>
-    <div id="ingredient">alface</div>
-    <div id="ingredient">alface</div>
-    <div id="ingredient">alface</div>
-  
-
-    </div>
+  const params = useParams()
+  const [foodData, setFoodData] = useState({
+    avatar: '',
+    title: '',
+    description: '',
+    ingredients: [],
+  });
 
   
 
+  useEffect(() => {
 
+   api.get(`/foods/${params.id}`)
+   .then(response => {
 
-  </section>
+    const {avatar,title,description,ingredients} = response.data
 
-  </div>
+    const avatarUrl = `http://localhost:7777/files/${avatar}`;
+    setFoodData( {
+      avatar:avatarUrl,
+      title,
+      description,
+      ingredients})
 
+   }).catch(error =>  {
+    console.error("erro ao obter dados do produto", error)
+   })
 
-  <div className="order">
-
-   <div className="quantity">
-
-     <button>
-
-   <img src="src/images/card/less.svg" alt="diminuir quantidade" />
-
-    </button>
-
-     <span>01</span>
-
-     <button>
-
-     <img src="src/images/card/more.svg" alt="Aumentar quantidade" />
-
-     </button>
-   </div>
     
-  <button id="request">
-
-  <img src="src/images/navBar/receipt.svg" alt="" />
-
-
-  pedir. R$ <span>25,00</span>
-
-  </button>
-
-  </div>
-  </div>
-</div>
-
-  
-
-</main>
+  },[params.id])
 
 
 
 
-<Footer/>
+  return (
+    <Container>
+      <NavBar />
 
+      <main>
+       <BtnBack/>
 
-</Container>
+        <div className="detailsFood">
+          <img
+            id="imgFood"
+            src={foodData.avatar}
+            alt="imagem do prato"
+          />
 
+          <div className="detailsRequest">
+            <div className="recipe">
+              <h2>Salada Ravanello</h2>
 
+              <p id="description">
+                {foodData.description}
+              </p>
 
+              <section>
+             
+                {foodData.ingredients.map((ingredient, index) => (
+                  <div key={index} id="ingredient">{ingredient}</div>
+                ))}
+             
+              </section>
+            </div>
 
+            <div className="order">
+              <div className="quantity">
+                <button>
+                  <img
+                    src={less}
+                    alt="diminuir quantidade"
+                  />
+                </button>
 
-)
+                <span>01</span>
 
+                <button>
+                  <img
+                    src={more}
+                    alt="Aumentar quantidade"
+                  />
+                </button>
+              </div>
 
+              <button id="request">
+                <img src= {receipt} alt="" />
+                pedir R$ <span>25,00</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
 
-
-
+      <Footer />
+    </Container>
+  );
 }

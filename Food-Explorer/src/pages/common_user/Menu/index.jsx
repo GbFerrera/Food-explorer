@@ -5,6 +5,8 @@ import { Input } from "../../../components/input";
 import { Footer } from "../../../components/footer";
 import { Link } from "react-router-dom";
 
+import search from "../../../images/navBar/search.svg"
+
 export function Menu() {
 
  const {singOut} = useAuth()
@@ -22,7 +24,7 @@ export function Menu() {
       <main>
         <div className="search">
           <button>
-            <img src="src/images/search.svg" alt="Imagem de lupa de pesquisa" />
+            <img src={search} alt="Imagem de lupa de pesquisa" />
           </button>
 
           <Input placeholder="Busque por pratos ou ingredientes" />

@@ -2,16 +2,42 @@ import { Container } from "./style";
 import { NavBar } from "../../../components/NavBar";
 import { Card } from "../../../components/card"
 import { Footer } from "../../../components/footer"
-import { useState } from "react";
+import { useState,useEffect } from "react";
+
+import { api } from "../../../services";
 
 
 export function Home() {
 
-   const [totalAmount, setTotalAmount] = useState(0);
+  const [totalAmount, setTotalAmount] = useState(0);
 
   const handleIncludeAmount = (amount) => {
     setTotalAmount((prevTotal) => prevTotal + amount);
   };
+
+
+  const [refeicoes, setRefeicoes] = useState([]);
+  const [sobremesas, setSobremesas] = useState([]);
+  const [bebidas, setBebidas] = useState([]);
+
+  useEffect(() => {
+    api.get("/foods")
+      .then(response => {
+        const foods = response.data;
+
+
+        const refeicoes = foods.filter(food => food.category === 'Refeições');
+        const sobremesas = foods.filter(food => food.category === 'Sobremesas');
+        const bebidas = foods.filter(food => food.category === 'Bebidas');
+
+        setRefeicoes(refeicoes);
+        setSobremesas(sobremesas);
+        setBebidas(bebidas);
+      })
+      .catch(error => {
+        console.error("Erro ao obter dados das comidas:", error);
+      });
+  }, []);
 
    return (
 
@@ -40,51 +66,59 @@ export function Home() {
             <p className="category">Refeições</p>
 
             <div className="cards">
+          {refeicoes.map((food, index) => {
+            // Construa a URL completa da imagem
+            const avatarUrl = `http://localhost:7777/files/${food.avatar}`;
 
-
-
-               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} onIncludeAmount={handleIncludeAmount}/>
-               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} onIncludeAmount={handleIncludeAmount}/>
-               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} onIncludeAmount={handleIncludeAmount}/>
-               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} onIncludeAmount={handleIncludeAmount}/>
-               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} onIncludeAmount={handleIncludeAmount}/>
-               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} onIncludeAmount={handleIncludeAmount}/>
-
-
-
-
-            </div>
+            return (
+              <Card
+                key={index}
+                img={avatarUrl}
+                food={food.title}
+                description={food.description}
+                price={food.price}
+              />
+            );
+          })}
+        </div>
 
             <p className="category">Sobremesas</p>
 
             <div className="cards">
+          {sobremesas.map((food, index) => {
+            // Construa a URL completa da imagem
+            const avatarUrl = `http://localhost:7777/files/${food.avatar}`;
 
-
-               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} />
-               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} />
-               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} />
-               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} />
-               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} />
-               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} />
-
-
-
-            </div>
+            return (
+              <Card
+                key={index}
+                img={avatarUrl}
+                food={food.title}
+                description={food.description}
+                price={food.price}
+              />
+            );
+          })}
+        </div>
 
             <p className="category">Bebidas</p>
 
             <div className="cards">
+          {bebidas.map((food, index) => {
+            // Construa a URL completa da imagem
+            const avatarUrl = `http://localhost:7777/files/${food.avatar}`;
 
-
-               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} />
-               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} />
-               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} />
-               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} />
-               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} />
-               <Card img="src/images/card/foods/salada.svg" food="Salada Ravanello >" description="A melhorzinha que ta tendo bb" price={"49,97"} />
-
-
-            </div>
+            return (
+              <Card
+                key={index}
+                img={avatarUrl}
+                food={food.title}
+                description={food.description}
+                price={food.price}
+              />
+            );
+          })}
+        </div>
 
 
 

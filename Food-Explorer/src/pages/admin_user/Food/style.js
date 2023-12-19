@@ -153,9 +153,12 @@ main{
  } 
 
 #imgFood{
+  
   width: 390px;
-height: 389px;
-
+  height: 389px;
+  
+  border-radius: 50%;
+  object-fit: cover;
 }
 
  .recipe{

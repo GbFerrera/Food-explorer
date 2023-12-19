@@ -58,6 +58,14 @@ export const Component = styled.div`
       height: 24px;
     }
 
+    #foodImg{
+      width: 88px;
+height: 88px;
+      object-fit: cover;
+        border-radius: 50%;
+        border: 1px solid white;
+    }
+
     #amountCard {
       display: flex;
       align-items: center;
@@ -92,6 +100,10 @@ export const Component = styled.div`
         margin: auto;
         width: 176px;
         height: 176px;
+
+        object-fit: cover;
+        border-radius: 50%;
+        border: 1px solid white;
       }
 
       #foodName {

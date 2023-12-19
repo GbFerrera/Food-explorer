@@ -3,6 +3,8 @@ import { useState } from "react";
 import { Component } from "./style";
 import { Button } from "../button";
 
+import { Link } from "react-router-dom";
+
 
 export function Card({ img, food, description, price, onIncludeAmount, ...rest }) {
 
@@ -57,8 +59,10 @@ export function Card({ img, food, description, price, onIncludeAmount, ...rest }
                 </button>
 
                 <img id="foodImg" src={img} />
-
+                
+                <Link to={"/food"}>
                 <p id="foodName">{food}</p>
+                </Link>
                 <p id="descriptionCard">{description}</p>
                 <p id="price"> R$ {price} </p>
 
