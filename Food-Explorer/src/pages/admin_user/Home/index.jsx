@@ -59,6 +59,7 @@ export function HomeAdmin() {
               <CardAdmin
                 key={index}
                 img={avatarUrl}
+                id={food.id}
                 food={food.title}
                 description={food.description}
                 price={food.price}
@@ -78,6 +79,7 @@ export function HomeAdmin() {
               <CardAdmin
                 key={index}
                 img={avatarUrl}
+                id={food.id}
                 food={food.title}
                 description={food.description}
                 price={food.price}
@@ -97,6 +99,7 @@ export function HomeAdmin() {
               <CardAdmin
                 key={index}
                 img={avatarUrl}
+                id={food.id}
                 food={food.title}
                 description={food.description}
                 price={food.price}

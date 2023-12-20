@@ -1,11 +1,13 @@
 import { Component } from "./style";
 import { Link } from "react-router-dom";
 
-export function CardAdmin({ img, food, description, price }) {
+import { useEffect } from "react";
+
+export function CardAdmin({ id,img, food, description, price }) {
   return (
     <Component>
       <div className="itens">
-        <Link to={"/edit"} className="BgNone" >
+        <Link to={`/edit/${id}`} className="BgNone" >
           <img
             id="penEdit"
             src="src/images/pen.svg"
@@ -16,7 +18,7 @@ export function CardAdmin({ img, food, description, price }) {
         
         <img id="foodImg" src={img} />
         
-        <Link to={"/food"}>
+        <Link to={`/food/${id}`}>
         <p id="foodName">{food}</p>
         </Link> 
         <p id="descriptionCard">{description}</p>

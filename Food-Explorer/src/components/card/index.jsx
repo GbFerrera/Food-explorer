@@ -6,7 +6,7 @@ import { Button } from "../button";
 import { Link } from "react-router-dom";
 
 
-export function Card({ img, food, description, price, onIncludeAmount, ...rest }) {
+export function Card({ id,img, food, description, price, onIncludeAmount, ...rest }) {
 
     const [amount, setAmount] = useState(1)
 
@@ -60,7 +60,7 @@ export function Card({ img, food, description, price, onIncludeAmount, ...rest }
 
                 <img id="foodImg" src={img} />
                 
-                <Link to={"/food"}>
+                <Link to={`/food/${id}`}>
                 <p id="foodName">{food}</p>
                 </Link>
                 <p id="descriptionCard">{description}</p>

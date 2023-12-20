@@ -74,6 +74,7 @@ export function Home() {
               <Card
                 key={index}
                 img={avatarUrl}
+                id={food.id}
                 food={food.title}
                 description={food.description}
                 price={food.price}
@@ -93,6 +94,7 @@ export function Home() {
               <Card
                 key={index}
                 img={avatarUrl}
+                id={food.id}
                 food={food.title}
                 description={food.description}
                 price={food.price}
@@ -112,6 +114,7 @@ export function Home() {
               <Card
                 key={index}
                 img={avatarUrl}
+                id={food.id}
                 food={food.title}
                 description={food.description}
                 price={food.price}
