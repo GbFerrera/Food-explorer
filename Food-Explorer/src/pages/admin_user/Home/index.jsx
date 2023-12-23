@@ -123,90 +123,131 @@ export function HomeAdmin() {
 
         <p className="category">Refeições</p>
 
-        
         {windowWidth >= 1080 ? (
           <Slider {...sliderSettings}>
-            {searchResults.refeicoes && searchResults.refeicoes.map((food, index) => (
-              <CardAdmin
-                key={index}
-                img={`http://localhost:7777/files/${food.avatar}`}
-                id={food.id}
-                food={food.title}
-                description={food.description}
-                price={food.price}
-              />
-            ))}
+            {searchResults.refeicoes &&
+              searchResults.refeicoes.map((food, index) => (
+                <CardAdmin
+                  key={food.id}
+                  img={`http://localhost:7777/files/${food.avatar}`}
+                  id={food.id}
+                  food={food.title}
+                  description={food.description}
+                  price={food.price}
+                />
+              ))}
+            {searchResults.refeicoes &&
+              searchResults.refeicoes.length < sliderSettings.slidesToShow &&
+              Array.from({
+                length:
+                  sliderSettings.slidesToShow - searchResults.refeicoes.length,
+              }).map((_, index) => <div key={`empty-${index}`} />)}
           </Slider>
         ) : (
           <div className="cards">
-            {searchResults.refeicoes && searchResults.refeicoes.map((food, index) => (
-              <CardAdmin
-                key={index}
-                img={`http://localhost:7777/files/${food.avatar}`}
-                id={food.id}
-                food={food.title}
-                description={food.description}
-                price={food.price}
-              />
-            ))}
+            {searchResults.refeicoes &&
+              searchResults.refeicoes.map((food, index) => (
+                <CardAdmin
+                  key={food.id}
+                  img={`http://localhost:7777/files/${food.avatar}`}
+                  id={food.id}
+                  food={food.title}
+                  description={food.description}
+                  price={food.price}
+                />
+              ))}
+            {searchResults.refeicoes &&
+              searchResults.refeicoes.length < sliderSettings.slidesToShow &&
+              Array.from({
+                length:
+                  sliderSettings.slidesToShow - searchResults.refeicoes.length,
+              }).map((_, index) => <div key={`empty-${index}`} />)}
           </div>
         )}
 
         <p className="category">Sobremesas</p>
         {windowWidth >= 1080 ? (
           <Slider {...sliderSettings}>
-            {searchResults.sobremesas && searchResults.sobremesas.map((food, index) => (
-              <CardAdmin
-                key={index}
-                img={`http://localhost:7777/files/${food.avatar}`}
-                id={food.id}
-                food={food.title}
-                description={food.description}
-                price={food.price}
-              />
-            ))}
+            {searchResults.sobremesas &&
+              searchResults.sobremesas.map((food, index) => (
+                <CardAdmin
+                  key={food.id}
+                  img={`http://localhost:7777/files/${food.avatar}`}
+                  id={food.id}
+                  food={food.title}
+                  description={food.description}
+                  price={food.price}
+                />
+              ))}
+            {searchResults.sobremesas &&
+              searchResults.sobremesas.length < sliderSettings.slidesToShow &&
+              Array.from({
+                length:
+                  sliderSettings.slidesToShow - searchResults.sobremesas.length,
+              }).map((_, index) => <div key={`empty-${index}`} />)}
           </Slider>
         ) : (
           <div className="cards">
-            {searchResults.sobremesas && searchResults.sobremesas.map((food, index) => (
-              <CardAdmin
-                key={index}
-                img={`http://localhost:7777/files/${food.avatar}`}
-                id={food.id}
-                food={food.title}
-                description={food.description}
-                price={food.price}
-              />
-            ))}
+            {searchResults.sobremesas &&
+              searchResults.sobremesas.map((food, index) => (
+                <CardAdmin
+                  key={food.id}
+                  img={`http://localhost:7777/files/${food.avatar}`}
+                  id={food.id}
+                  food={food.title}
+                  description={food.description}
+                  price={food.price}
+                />
+              ))}
+            {searchResults.sobremesas &&
+              searchResults.sobremesas.length < sliderSettings.slidesToShow &&
+              Array.from({
+                length:
+                  sliderSettings.slidesToShow - searchResults.sobremesas.length,
+              }).map((_, index) => <div key={`empty-${index}`} />)}
           </div>
         )}
 
         <p className="category">Bebidas</p>
         {windowWidth >= 1080 ? (
           <Slider {...sliderSettings}>
-            {searchResults.bebidas && searchResults.bebidas.map((food, index) => (
-              <CardAdmin
-                key={index}
-                img={`http://localhost:7777/files/${food.avatar}`}
-                id={food.id}
-                food={food.title}
-                description={food.description}
-                price={food.price}
-              />
-            ))}
+            {searchResults.bebidas &&
+              searchResults.bebidas.map((food, index) => (
+                <CardAdmin
+                  key={food.id}
+                  img={`http://localhost:7777/files/${food.avatar}`}
+                  id={food.id}
+                  food={food.title}
+                  description={food.description}
+                  price={food.price}
+                />
+              ))}
+            {searchResults.bebidas &&
+              searchResults.bebidas.length < sliderSettings.slidesToShow &&
+              Array.from({
+                length:
+                  sliderSettings.slidesToShow - searchResults.bebidas.length,
+              }).map((_, index) => <div key={`empty-${index}`} />)}
           </Slider>
         ) : (
           <div className="cards">
-            {searchResults.bebidas && searchResults.bebidas.map((food, index) => (
-              <CardAdmin
-                key={index}
-                img={`http://localhost:7777/files/${food.avatar}`}
-                id={food.id}
-                food={food.title}
-                description={food.description}
-                price={food.price}
-              />
-            ))}
+            {searchResults.bebidas &&
+              searchResults.bebidas.map((food, index) => (
+                <CardAdmin
+                  key={food.id}
+                  img={`http://localhost:7777/files/${food.avatar}`}
+                  id={food.id}
+                  food={food.title}
+                  description={food.description}
+                  price={food.price}
+                />
+              ))}
+            {searchResults.bebidas &&
+              searchResults.bebidas.length < sliderSettings.slidesToShow &&
+              Array.from({
+                length:
+                  sliderSettings.slidesToShow - searchResults.bebidas.length,
+              }).map((_, index) => <div key={`empty-${index}`} />)}
           </div>
         )}
       </main>

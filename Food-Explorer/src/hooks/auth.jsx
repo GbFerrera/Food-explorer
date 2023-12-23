@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 
+
 import { api } from "../services";
 
 export const AuthContext = createContext({});
@@ -15,7 +16,7 @@ function AuthProvider({ children }) {
       localStorage.setItem("@foodEplorer:user" , JSON.stringify(user))
       localStorage.setItem("@foodEplorer:token", token)
 
-      api.defaults.headers.authorization = `Bearer ${token}`;
+      api.defaults.headers.common['Authorization'] = `Bearer ${token}`
       setData({ user, token });
     } catch (error) {
       if (error.response) {

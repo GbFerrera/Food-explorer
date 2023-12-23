@@ -82,9 +82,9 @@ export function AdminNavBar({ onSearch }) {
          onClick={navigateNew}
          />
 
-        <button id="LogOut" onClick={singOut}>
-          <img src={logOut} alt="" />
-        </button>
+        <Link to="/" id="LogOut">
+          <img src={logOut} alt="" onClick={singOut} />
+        </Link>
       </div>
     </Component>
   );

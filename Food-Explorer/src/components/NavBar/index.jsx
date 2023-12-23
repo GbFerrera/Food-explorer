@@ -101,9 +101,9 @@ export function NavBar({ totalAmount, setTotalAmount, onSearch  }) {
           </p>
         </button>
 
-        <button id="LogOut" onClick={singOut}>
+        <Link to="/" onClick={singOut}  id="LogOut">
           <img src={logOut} alt="" />
-        </button>
+        </Link>
       </div>
     </Component>
   );

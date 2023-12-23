@@ -133,16 +133,7 @@ background: none;
  }
 
 
-button {
-  background: none;
- height: 24px;
-img {
 
-  width: 24px;
-  height: 24px;
-}
-
-}
 
 }
 
@@ -167,7 +158,10 @@ img {
   
 }
 
+#LogOut{
 
+display: flex;
+}
 
 
  

@@ -4,9 +4,9 @@ import "slick-carousel/slick/slick-theme.css";
 
 import { Container } from "./style";
 import { NavBar } from "../../../components/NavBar";
-import { Card } from "../../../components/card"
-import { Footer } from "../../../components/footer"
-import { useState,useEffect } from "react";
+import { Card } from "../../../components/card";
+import { Footer } from "../../../components/footer";
+import { useState, useEffect } from "react";
 
 import { api } from "../../../services";
 
@@ -38,20 +38,17 @@ const slickArrowStyles = {
   zIndex: 1,
 };
 
-
 export function Home() {
-
   const [totalAmount, setTotalAmount] = useState(0);
 
   const handleIncludeAmount = (amount) => {
     setTotalAmount((prevTotal) => prevTotal + amount);
   };
 
-
   const [refeicoes, setRefeicoes] = useState([]);
   const [sobremesas, setSobremesas] = useState([]);
   const [bebidas, setBebidas] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -60,35 +57,37 @@ export function Home() {
   };
 
   useEffect(() => {
-    api.get("/foods")
-      .then(response => {
+    api
+      .get("/foods")
+      .then((response) => {
         const foods = response.data;
 
-
-        const refeicoes = foods.filter(food => food.category === 'Refeições');
-        const sobremesas = foods.filter(food => food.category === 'Sobremesas');
-        const bebidas = foods.filter(food => food.category === 'Bebidas');
+        const refeicoes = foods.filter((food) => food.category === "Refeições");
+        const sobremesas = foods.filter(
+          (food) => food.category === "Sobremesas"
+        );
+        const bebidas = foods.filter((food) => food.category === "Bebidas");
 
         setRefeicoes(refeicoes);
         setSobremesas(sobremesas);
         setBebidas(bebidas);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("Erro ao obter dados das comidas:", error);
       });
   }, []);
 
   useEffect(() => {
-    const filteredRefeicoes = refeicoes.filter(food =>
+    const filteredRefeicoes = refeicoes.filter((food) =>
       food.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
-    const filteredSobremesas = sobremesas.filter(food =>
+    const filteredSobremesas = sobremesas.filter((food) =>
       food.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
-    const filteredBebidas = bebidas.filter(food =>
+    const filteredBebidas = bebidas.filter((food) =>
       food.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
-  
+
     setSearchResults((prevState) => ({
       ...prevState,
       refeicoes: filteredRefeicoes,
@@ -102,10 +101,10 @@ export function Home() {
       setWindowWidth(window.innerWidth);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
   const sliderSettings = {
@@ -118,177 +117,162 @@ export function Home() {
     nextArrow: <CustomNextArrow />,
   };
 
-   return (
+  return (
+    <Container>
+      <NavBar
+        totalAmount={totalAmount}
+        setTotalAmount={setTotalAmount}
+        onSearch={handleSearch}
+      />
 
-      <Container>
+      <main>
+        <section>
+          <img src="src/images/home/fruits.svg" alt="Frutas decorativas " />
 
-         <NavBar 
-         totalAmount={totalAmount}
-         setTotalAmount={setTotalAmount} 
-         onSearch={handleSearch}/>
+          <div id="text">
+            <h5>Sabores inigualáveis</h5>
+            <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
+          </div>
+        </section>
 
-         <main>
+        <p className="category">Refeições</p>
 
-            <section>
+        {windowWidth >= 1080 ? (
+          <Slider {...sliderSettings}>
+            {searchResults.refeicoes &&
+              searchResults.refeicoes.map((food, index) => (
+                <Card
+                  key={food.id}
+                  img={`http://localhost:7777/files/${food.avatar}`}
+                  id={food.id}
+                  food={food.title}
+                  description={food.description}
+                  price={food.price}
+                  onIncludeAmount={handleIncludeAmount}
+                />
+              ))}
+            {searchResults.refeicoes &&
+              searchResults.refeicoes.length < sliderSettings.slidesToShow &&
+              Array.from({
+                length:
+                  sliderSettings.slidesToShow - searchResults.refeicoes.length,
+              }).map((_, index) => <div key={`empty-${index}`} />)}
+          </Slider>
+        ) : (
+          <div className="cards">
+            {searchResults.refeicoes &&
+              searchResults.refeicoes.map((food, index) => (
+                <Card
+                  key={food.id}
+                  img={`http://localhost:7777/files/${food.avatar}`}
+                  id={food.id}
+                  food={food.title}
+                  description={food.description}
+                  price={food.price}
+                  onIncludeAmount={handleIncludeAmount}
+                />
+              ))}
+            {searchResults.refeicoes &&
+              searchResults.refeicoes.length < sliderSettings.slidesToShow &&
+              Array.from({
+                length:
+                  sliderSettings.slidesToShow - searchResults.refeicoes.length,
+              }).map((_, index) => <div key={`empty-${index}`} />)}
+          </div>
+        )}
 
-               <img src="src/images/home/fruits.svg" alt="Frutas decorativas " />
+        <p className="category">Sobremesas</p>
+        {windowWidth >= 1080 ? (
+          <Slider {...sliderSettings}>
+            {searchResults.sobremesas &&
+              searchResults.sobremesas.map((food, index) => (
+                <Card
+                  key={food.id}
+                  img={`http://localhost:7777/files/${food.avatar}`}
+                  id={food.id}
+                  food={food.title}
+                  description={food.description}
+                  price={food.price}
+                  onIncludeAmount={handleIncludeAmount}
+                />
+              ))}
+            {searchResults.sobremesas &&
+              searchResults.sobremesas.length < sliderSettings.slidesToShow &&
+              Array.from({
+                length:
+                  sliderSettings.slidesToShow - searchResults.sobremesas.length,
+              }).map((_, index) => <div key={`empty-${index}`} />)}
+          </Slider>
+        ) : (
+          <div className="cards">
+            {searchResults.sobremesas &&
+              searchResults.sobremesas.map((food, index) => (
+                <Card
+                  key={food.id}
+                  img={`http://localhost:7777/files/${food.avatar}`}
+                  id={food.id}
+                  food={food.title}
+                  description={food.description}
+                  price={food.price}
+                  onIncludeAmount={handleIncludeAmount}
+                />
+              ))}
+            {searchResults.sobremesas &&
+              searchResults.sobremesas.length < sliderSettings.slidesToShow &&
+              Array.from({
+                length:
+                  sliderSettings.slidesToShow - searchResults.sobremesas.length,
+              }).map((_, index) => <div key={`empty-${index}`} />)}
+          </div>
+        )}
 
+        <p className="category">Bebidas</p>
+        {windowWidth >= 1080 ? (
+          <Slider {...sliderSettings}>
+            {searchResults.bebidas &&
+              searchResults.bebidas.map((food, index) => (
+                <Card
+                  key={food.id}
+                  img={`http://localhost:7777/files/${food.avatar}`}
+                  id={food.id}
+                  food={food.title}
+                  description={food.description}
+                  price={food.price}
+                  onIncludeAmount={handleIncludeAmount}
+                />
+              ))}
+            {searchResults.bebidas &&
+              searchResults.bebidas.length < sliderSettings.slidesToShow &&
+              Array.from({
+                length:
+                  sliderSettings.slidesToShow - searchResults.bebidas.length,
+              }).map((_, index) => <div key={`empty-${index}`} />)}
+          </Slider>
+        ) : (
+          <div className="cards">
+            {searchResults.bebidas &&
+              searchResults.bebidas.map((food, index) => (
+                <Card
+                  key={food.id}
+                  img={`http://localhost:7777/files/${food.avatar}`}
+                  id={food.id}
+                  food={food.title}
+                  description={food.description}
+                  price={food.price}
+                  onIncludeAmount={handleIncludeAmount}
+                />
+              ))}
+            {searchResults.bebidas &&
+              searchResults.bebidas.length < sliderSettings.slidesToShow &&
+              Array.from({
+                length:
+                  sliderSettings.slidesToShow - searchResults.bebidas.length,
+              }).map((_, index) => <div key={`empty-${index}`} />)}
+          </div>
+        )}
+      </main>
 
-               <div id="text">
-                  <h5>Sabores inigualáveis</h5>
-                  <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
-
-               </div>
-
-            </section>
-
-            
-
-
-            <p className="category">Refeições</p>
-
-            {windowWidth >= 1080 ? (
-  <Slider {...sliderSettings}>
-    {searchResults.refeicoes &&
-      searchResults.refeicoes.map((food, index) => (
-        <Card
-          key={food.id}
-          img={`http://localhost:7777/files/${food.avatar}`}
-          id={food.id}
-          food={food.title}
-          description={food.description}
-          price={food.price}
-          onIncludeAmount={handleIncludeAmount}
-        />
-      ))}
-    {searchResults.refeicoes &&
-      searchResults.refeicoes.length < sliderSettings.slidesToShow &&
-      Array.from({ length: sliderSettings.slidesToShow - searchResults.refeicoes.length }).map((_, index) => (
-        <div key={`empty-${index}`} />
-      ))}
-  </Slider>
-) : (
-  <div className="cards">
-    {searchResults.refeicoes &&
-      searchResults.refeicoes.map((food, index) => (
-        <Card
-          key={food.id}
-          img={`http://localhost:7777/files/${food.avatar}`}
-          id={food.id}
-          food={food.title}
-          description={food.description}
-          price={food.price}
-          onIncludeAmount={handleIncludeAmount}
-        />
-      ))}
-    {searchResults.refeicoes &&
-      searchResults.refeicoes.length < sliderSettings.slidesToShow &&
-      Array.from({ length: sliderSettings.slidesToShow - searchResults.refeicoes.length }).map((_, index) => (
-        <div key={`empty-${index}`} />
-      ))}
-  </div>
-)}
-
- 
-<p className="category">Sobremesas</p>
-{windowWidth >= 1080 ? (
-  <Slider {...sliderSettings}>
-    {searchResults.sobremesas &&
-      searchResults.sobremesas.map((food, index) => (
-        <Card
-          key={food.id}
-          img={`http://localhost:7777/files/${food.avatar}`}
-          id={food.id}
-          food={food.title}
-          description={food.description}
-          price={food.price}
-          onIncludeAmount={handleIncludeAmount}
-        />
-      ))}
-    {searchResults.sobremesas &&
-      searchResults.sobremesas.length < sliderSettings.slidesToShow &&
-      Array.from({ length: sliderSettings.slidesToShow - searchResults.sobremesas.length }).map((_, index) => (
-        <div key={`empty-${index}`} />
-      ))}
-  </Slider>
-) : (
-  <div className="cards">
-    {searchResults.sobremesas &&
-      searchResults.sobremesas.map((food, index) => (
-        <Card
-          key={food.id}
-          img={`http://localhost:7777/files/${food.avatar}`}
-          id={food.id}
-          food={food.title}
-          description={food.description}
-          price={food.price}
-          onIncludeAmount={handleIncludeAmount}
-        />
-      ))}
-    {searchResults.sobremesas &&
-      searchResults.sobremesas.length < sliderSettings.slidesToShow &&
-      Array.from({ length: sliderSettings.slidesToShow - searchResults.sobremesas.length }).map((_, index) => (
-        <div key={`empty-${index}`} />
-      ))}
-  </div>
-)}
-
-<p className="category">Bebidas</p>
-{windowWidth >= 1080 ? (
-  <Slider {...sliderSettings}>
-    {searchResults.bebidas &&
-      searchResults.bebidas.map((food, index) => (
-        <Card
-          key={food.id}
-          img={`http://localhost:7777/files/${food.avatar}`}
-          id={food.id}
-          food={food.title}
-          description={food.description}
-          price={food.price}
-          onIncludeAmount={handleIncludeAmount}
-        />
-      ))}
-    {searchResults.bebidas &&
-      searchResults.bebidas.length < sliderSettings.slidesToShow &&
-      Array.from({ length: sliderSettings.slidesToShow - searchResults.bebidas.length }).map((_, index) => (
-        <div key={`empty-${index}`} />
-      ))}
-  </Slider>
-) : (
-  <div className="cards">
-    {searchResults.bebidas &&
-      searchResults.bebidas.map((food, index) => (
-        <Card
-          key={food.id}
-          img={`http://localhost:7777/files/${food.avatar}`}
-          id={food.id}
-          food={food.title}
-          description={food.description}
-          price={food.price}
-          onIncludeAmount={handleIncludeAmount}
-        />
-      ))}
-    {searchResults.bebidas &&
-      searchResults.bebidas.length < sliderSettings.slidesToShow &&
-      Array.from({ length: sliderSettings.slidesToShow - searchResults.bebidas.length }).map((_, index) => (
-        <div key={`empty-${index}`} />
-      ))}
-  </div>
-)}
-
-
-
-         </main>
-
-         <Footer />
-
-
-
-
-      </Container>
-   )
-
-
-
-
+      <Footer />
+    </Container>
+  );
 }

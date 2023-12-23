@@ -6,14 +6,17 @@ import { Footer } from "../../../components/footer";
 import { Button } from "../../../components/button";
 import { BtnBack } from "../../../components/button_Back";
 
+import { useNavigate } from "react-router-dom";
+
 import { useState, useEffect } from "react";
 
 import { useParams } from "react-router-dom";
 
 export function AdminFood() {
-
+  const navigate = useNavigate()
   const params = useParams()
   const [foodData, setFoodData] = useState({
+    id: '',
     avatar: '',
     title: '',
     description: '',
@@ -22,15 +25,21 @@ export function AdminFood() {
 
   
 
+  function editNavigate(){
+    navigate(`/edit/${params.id}`)
+    
+  }
+
   useEffect(() => {
 
    api.get(`/foods/${params.id}`)
    .then(response => {
 
-    const {avatar,title,description,ingredients} = response.data
+    const {id,avatar,title,description,ingredients} = response.data
 
     const avatarUrl = `http://localhost:7777/files/${avatar}`;
     setFoodData( {
+      id,
       avatar:avatarUrl,
       title,
       description,
@@ -77,6 +86,7 @@ export function AdminFood() {
             <Button 
             id="editBtn" 
             title="Editar Prato"
+            onClick={editNavigate}
             />
               
                    

@@ -47,6 +47,13 @@ font-family: Poppins;
 font-size: 24px;
   }
 }
+
+ul li{
+  margin: 40px 20px;
+}
+#Error{
+  margin-top: 40px;
+}
 .search{
 display: flex;
 align-items: center;
@@ -54,11 +61,12 @@ padding: 0 14px;
 border-radius: 5px;
 background: ${({theme}) => theme.COLORS.Dark_dark_700};
 margin-top: 36px;
-button{
-margin-top: 5px;
-height: 24px;
-width: 24px;
+
+
+img{
+  margin-top: 10px;
 }
+
 input {
 background: none;
 }

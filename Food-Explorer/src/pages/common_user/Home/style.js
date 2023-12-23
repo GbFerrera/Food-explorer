@@ -13,7 +13,7 @@ export const Container = styled.div`
  }
 
 
- .cards:hover>:not(:hover){
+ .slick-track:hover>:not(:hover){
 
 opacity: .4;
 transform: scale(0.9);
