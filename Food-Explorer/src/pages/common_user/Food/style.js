@@ -62,8 +62,9 @@ h2{
 
 section{
   display: flex;
+  justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 24px;
 
   .rowOne,.rowTwo{
@@ -99,6 +100,10 @@ section{
 display: flex;
 align-items: center;
 gap: 16px;
+
+button{
+  display: flex;
+}
 
 }
 
@@ -191,6 +196,7 @@ main{
 section{
   display: flex;
   gap: 28px;
+  flex-wrap: wrap;
 
   .ingredients{
     display: flex;

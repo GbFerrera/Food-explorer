@@ -1,23 +1,18 @@
 import { useAuth } from "../../hooks/auth";
-
 import { Component } from "./style";
 import { Input } from "../input";
 import { Button } from "../button";
 import { Link } from "react-router-dom";
-
 import search from "../../images/navBar/search.svg";
-import logo from "../../images/polygon.svg"
-import receipt from "../../images/navBar/receipt.svg"
-import logOut from "../../images/navBar/logOut.svg"
-
-import { useState,useEffect } from "react";
+import logo from "../../images/polygon.svg";
+import receipt from "../../images/navBar/receipt.svg";
+import logOut from "../../images/navBar/logOut.svg";
+import options from "../../images/navBar/options.svg";
+import { useState, useEffect } from "react";
 import { api } from "../../services";
 
-
-export function NavBar({ totalAmount, setTotalAmount, onSearch  }) {
+export function NavBar({ totalAmount, setTotalAmount, onSearch }) {
   const { singOut } = useAuth();
-
-
 
   const [searchItem, setSearchItem] = useState("");
   const [searchResults, setSearchResults] = useState([]);
@@ -25,7 +20,6 @@ export function NavBar({ totalAmount, setTotalAmount, onSearch  }) {
   const handleSearch = async () => {
     try {
       if (searchItem.trim() === "") {
-     
         setSearchResults({
           refeicoes: [],
           sobremesas: [],
@@ -33,14 +27,14 @@ export function NavBar({ totalAmount, setTotalAmount, onSearch  }) {
         });
         return;
       }
-  
+
       const response = await api.get(`/foods?term=${searchItem}`);
       setSearchResults({
         refeicoes: response.data.filter((food) => food.category === "Refeições"),
         sobremesas: response.data.filter((food) => food.category === "Sobremesas"),
         bebidas: response.data.filter((food) => food.category === "Bebidas"),
       });
-  
+
       onSearch(searchItem);
     } catch (error) {
       console.error("Erro ao realizar a pesquisa:", error);
@@ -51,15 +45,11 @@ export function NavBar({ totalAmount, setTotalAmount, onSearch  }) {
     handleSearch();
   }, [searchItem]);
 
-
   return (
     <Component>
       <div className="mobile">
         <Link to={"/menu"}>
-          <img
-            src="src/images/navBar/options.svg"
-            alt="Imagem de opções de menu da Home"
-          />
+          <img src={options} alt="Imagem de opções de menu da Home" />
         </Link>
 
         <Link to={"/"}>
@@ -70,7 +60,7 @@ export function NavBar({ totalAmount, setTotalAmount, onSearch  }) {
         </Link>
 
         <button>
-          <img src= {receipt} alt="Recibo de pedidos" />
+          <img src={receipt} alt="Recibo de pedidos" />
         </button>
         <span>{totalAmount}</span>
       </div>
@@ -86,22 +76,20 @@ export function NavBar({ totalAmount, setTotalAmount, onSearch  }) {
         <div id="search">
           <div className="itensSearch">
             <img src={search} alt="Imagem de lupa de pesquisa" />
-
-            <Input 
-            placeholder="Busque por pratos ou ingredientes" 
-            onChange={e => setSearchItem(e.target.value)}
+            <Input
+              placeholder="Busque por pratos ou ingredientes"
+              onChange={(e) => setSearchItem(e.target.value)}
             />
           </div>
         </div>
         <button id="requests">
           <img src={receipt} alt="Recibo de pedidos" />
-
           <p>
             Pedidos (<span>{totalAmount}</span>)
           </p>
         </button>
 
-        <Link to="/" onClick={singOut}  id="LogOut">
+        <Link to="/" onClick={singOut} id="LogOut">
           <img src={logOut} alt="" />
         </Link>
       </div>
