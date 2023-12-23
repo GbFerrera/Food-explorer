@@ -29,6 +29,7 @@ gap: 24px;
   width: 264px;
  height: 264px;
  margin: auto;
+ border-radius: 50%;
  }
 
  .recipe{

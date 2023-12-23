@@ -45,28 +45,6 @@ import update from "../../images/update.svg"
 
   async function handleSaveChanges(){
 
-    if(!avatar) {
-      return alert("Você não inseriu a imagem do prato")
-    }
-
-    if(!title) {
-      return alert("Você não inseriu o titulo do prato")
-    }
-    if(!category) {
-      return alert("Você não inseriu a categoria do prato")
-    }
-
-    if(ingredient.length < 1) {
-      return alert("Você precisa pelo menos inserir um ingrediente")
-    }
-
-    if(!price) {
-      return alert("Você não inseriu o valor do prato")
-    }
-
-    if(!description) {
-      return alert("Você não inseriu a descrição do prato")
-    }
 
    const formData = new FormData()
 
@@ -80,12 +58,14 @@ import update from "../../images/update.svg"
 
    ingredientsArray.forEach((ingredientItem, index) => {
     formData.append(`ingredient[${index}]`, ingredientItem);
+
+   
   });
    
 
 
    await api.put(`/foods/${params.id}`, formData)
-   .then(alert("atualizado com sucesso"))
+   .then( alert("atualizado com sucesso"))
    .catch(error => {
     if(error.response){
       alert(error.response.data.message)
@@ -99,6 +79,8 @@ import update from "../../images/update.svg"
 
 )
 
+
+
   }
 
 
@@ -111,7 +93,7 @@ import update from "../../images/update.svg"
       await api.delete(`/foods/${params.id}`)
 
       alert("Deletado com sucesso")
-
+      navigate("/")
 
     }
 
