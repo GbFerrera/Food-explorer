@@ -1,5 +1,4 @@
 import { useAuth } from "../../hooks/auth";
-import { useState } from "react";
 
 import { Component } from "./style";
 import { Input } from "../input";
@@ -11,8 +10,47 @@ import logo from "../../images/polygon.svg"
 import receipt from "../../images/navBar/receipt.svg"
 import logOut from "../../images/navBar/logOut.svg"
 
-export function NavBar({ totalAmount, setTotalAmount }) {
+import { useState,useEffect } from "react";
+import { api } from "../../services";
+
+
+export function NavBar({ totalAmount, setTotalAmount, onSearch  }) {
   const { singOut } = useAuth();
+
+
+
+  const [searchItem, setSearchItem] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+
+  const handleSearch = async () => {
+    try {
+      if (searchItem.trim() === "") {
+     
+        setSearchResults({
+          refeicoes: [],
+          sobremesas: [],
+          bebidas: [],
+        });
+        return;
+      }
+  
+      const response = await api.get(`/foods?term=${searchItem}`);
+      setSearchResults({
+        refeicoes: response.data.filter((food) => food.category === "Refeições"),
+        sobremesas: response.data.filter((food) => food.category === "Sobremesas"),
+        bebidas: response.data.filter((food) => food.category === "Bebidas"),
+      });
+  
+      onSearch(searchItem);
+    } catch (error) {
+      console.error("Erro ao realizar a pesquisa:", error);
+    }
+  };
+
+  useEffect(() => {
+    handleSearch();
+  }, [searchItem]);
+
 
   return (
     <Component>
@@ -49,7 +87,10 @@ export function NavBar({ totalAmount, setTotalAmount }) {
           <div className="itensSearch">
             <img src={search} alt="Imagem de lupa de pesquisa" />
 
-            <Input placeholder="Busque por pratos ou ingredientes" />
+            <Input 
+            placeholder="Busque por pratos ou ingredientes" 
+            onChange={e => setSearchItem(e.target.value)}
+            />
           </div>
         </div>
         <button id="requests">

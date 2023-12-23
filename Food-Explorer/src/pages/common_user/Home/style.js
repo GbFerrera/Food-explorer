@@ -78,8 +78,16 @@ gap: 12px;
 justify-content: center;
 align-items: center;
 width: 210px;
+
+ p{
+  text-align: center;
+ }
 }
 
+}
+
+.cards:nth-child(7){
+  margin-bottom: 60px;
 }
 }
 @media(min-width: 431px) {
@@ -139,6 +147,17 @@ font-size: 32px;
 font-style: normal;
 font-weight: 500;
 }
+}
+
+.slick-slider{
+
+.slick-prev:before {
+content: '';
+}
+.slick-next:before {
+content: '';
+}
+
 }
 footer {
 padding: 24px 123px ;

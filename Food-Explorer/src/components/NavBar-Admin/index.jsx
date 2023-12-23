@@ -11,8 +11,11 @@ import logOut from "../../images/navBar/logOut.svg"
 import search from "../../images/navBar/search.svg"
 import options from "../../images/navBar/options.svg"
 
+import { useState, useEffect } from "react";
+import { api } from "../../services";
 
-export function AdminNavBar() {
+
+export function AdminNavBar({ onSearch }) {
 
   const navigate = useNavigate()
 
@@ -20,6 +23,28 @@ export function AdminNavBar() {
     navigate("/new")
   }
   const { singOut } = useAuth();
+
+  const [searchItem, setSearchItem] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+
+  const handleSearch = async () => {
+    try {
+      const response = await api.get(`/foods?term=${searchItem}`);
+      setSearchResults(response.data);
+
+      onSearch(searchItem)
+    } catch (error) {
+      console.error("Erro ao realizar a pesquisa:", error);
+    }
+  };
+
+  useEffect(() => {
+    handleSearch();
+  }, [searchItem]);
+
+
+
+
   return (
     <Component>
       <Link to="/menu" id="btnOptions">
@@ -47,6 +72,7 @@ export function AdminNavBar() {
             <input
               type="text"
               placeholder="Busque por pratos ou ingredientes"
+              onChange={e => setSearchItem(e.target.value)}
             />
           </div>
         </div>
