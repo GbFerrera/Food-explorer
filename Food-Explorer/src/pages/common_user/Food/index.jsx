@@ -1,3 +1,4 @@
+// Food.js
 import { useParams } from "react-router-dom";
 import { api } from "../../../services";
 import { Container } from "./style";

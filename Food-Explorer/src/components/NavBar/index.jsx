@@ -1,7 +1,7 @@
+// NavBar.js
 import { useAuth } from "../../hooks/auth";
 import { Component } from "./style";
 import { Input } from "../input";
-import { Button } from "../button";
 import { Link } from "react-router-dom";
 import search from "../../images/navBar/search.svg";
 import logo from "../../images/polygon.svg";
