@@ -1,4 +1,4 @@
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 
 import { useAuth  } from "../hooks/auth";
 
@@ -15,14 +15,14 @@ export function Routes() {
 
  return (
 
-  <BrowserRouter>
+  <Router>
   
     
   {isAdmin ? <AdmAppRoutes /> : user ? <AppRoutes /> : <AuthRoutes />}
 
     
      
-  </BrowserRouter>
+  </Router>
 
  )
 
