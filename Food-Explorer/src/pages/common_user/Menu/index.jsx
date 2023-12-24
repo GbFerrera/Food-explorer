@@ -4,9 +4,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { Container } from "./style";
 import { Input } from "../../../components/input";
 import { Footer } from "../../../components/footer";
+
 import search from "../../../images/navBar/search.svg";
+import close from "../../../images/close.svg"
 
 import { api } from "../../../services";
+
 
 export function Menu() {
   const { singOut } = useAuth();
@@ -45,7 +48,7 @@ export function Menu() {
     <Container>
       <header>
         <Link to={"/"}>
-          <img src="src/images/close.svg" alt="Imagem para fechar Menu" />
+          <img src={close} alt="Imagem para fechar Menu" />
         </Link>
 
         <p>Menu</p>

@@ -12,6 +12,7 @@ import { api } from "../../../services";
 
 import arrowRight from "../../../images/card/right-arrow.svg";
 import arrowLeft from "../../../images/card/left-arrow.svg";
+import fruits from "../../../images/home/fruits.svg"
 
 const CustomPrevArrow = (props) => (
   <div {...props} style={{ ...slickArrowStyles, left: "-20px" }}>
@@ -127,7 +128,7 @@ export function Home() {
 
       <main>
         <section>
-          <img src="src/images/home/fruits.svg" alt="Frutas decorativas " />
+          <img src={fruits} alt="Frutas decorativas " />
 
           <div id="text">
             <h5>Sabores inigualáveis</h5>

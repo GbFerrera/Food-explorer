@@ -7,6 +7,8 @@ import { Link } from "react-router-dom"
 
 import { useAuth } from "../../../hooks/auth"
 
+import logo from "../../../images/polygon.svg"
+
 
 export function SingIn() {
 
@@ -25,7 +27,7 @@ export function SingIn() {
     <Container>
 
       <header>
-        <img src="src/images/polygon.svg" alt="logo" />
+        <img src={logo} alt="logo" />
         <h1>food explorer</h1>
 
       </header>

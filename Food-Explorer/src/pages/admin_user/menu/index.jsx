@@ -6,6 +6,8 @@ import { Input } from "../../../components/input";
 import { Footer } from "../../../components/footer";
 import search from "../../../images/navBar/search.svg";
 
+import close from "../../../images/close.svg"
+
 import { api } from "../../../services";
 
 export function MenuAdmin() {
@@ -45,7 +47,7 @@ export function MenuAdmin() {
     <Container>
       <header>
         <Link to={"/"}>
-          <img src="src/images/close.svg" alt="Imagem para fechar Menu" />
+          <img src={close} alt="Imagem para fechar Menu" />
         </Link>
 
         <p>Menu</p>

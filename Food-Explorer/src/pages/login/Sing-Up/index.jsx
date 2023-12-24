@@ -5,6 +5,8 @@ import { Input } from "../../../components/input";
 import { Button } from "../../../components/button";
 import { Link, useNavigate } from "react-router-dom";
 
+import logo from "../../../images/polygon.svg"
+
 import {api} from "../../../services"
 
 export function SingUp() {
@@ -43,7 +45,7 @@ export function SingUp() {
   return (
     <Container>
       <header>
-        <img src="src/images/polygon.svg" alt="logo" />
+        <img src={logo} alt="logo" />
         <h1>food explorer</h1>
       </header>
 
