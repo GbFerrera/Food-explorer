@@ -5,6 +5,9 @@ import { Button } from "../button";
 
 import { Link } from "react-router-dom";
 
+import less from "../../images/card/less.svg"
+import more from "../../images/card/more.svg"
+
 
 export function Card({ id,img, food, description, price, onIncludeAmount, ...rest }) {
 
@@ -75,7 +78,7 @@ export function Card({ id,img, food, description, price, onIncludeAmount, ...res
 
                             <button className="BgNone" onClick={decreaseAmount}>
 
-                                <img src="src/images/card/less.svg" alt="" />
+                                <img src={less} alt="" />
 
                             </button>
 
@@ -83,7 +86,7 @@ export function Card({ id,img, food, description, price, onIncludeAmount, ...res
 
                             <button className="BgNone" onClick={increaseAmount}>
 
-                                <img src="src/images/card/more.svg" alt="" />
+                                <img src={more} alt="" />
 
                             </button>
 
@@ -104,7 +107,7 @@ export function Card({ id,img, food, description, price, onIncludeAmount, ...res
 
                         <button className="BgNone" onClick={decreaseAmount}>
 
-                            <img src="src/images/card/less.svg" alt="" />
+                            <img src={less} alt="" />
 
                         </button>
 
@@ -112,7 +115,7 @@ export function Card({ id,img, food, description, price, onIncludeAmount, ...res
 
                         <button className="BgNone" onClick={increaseAmount}>
 
-                            <img src="src/images/card/more.svg" alt="" />
+                            <img src={more} alt="" />
 
                         </button>
 

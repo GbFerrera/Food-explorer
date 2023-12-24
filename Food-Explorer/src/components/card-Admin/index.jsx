@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 import { useEffect } from "react";
 
+import penEdit from "../../../images/pen.svg"
+
 export function CardAdmin({ id,img, food, description, price }) {
   return (
     <Component>
@@ -10,7 +12,7 @@ export function CardAdmin({ id,img, food, description, price }) {
         <Link to={`/edit/${id}`} className="BgNone" >
           <img
             id="penEdit"
-            src="src/images/pen.svg"
+            src={penEdit}
             alt="icone de editar comida"
           />
         </Link>

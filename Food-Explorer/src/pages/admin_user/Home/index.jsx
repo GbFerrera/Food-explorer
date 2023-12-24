@@ -12,6 +12,7 @@ import { api } from "../../../services";
 
 import arrowRight from "../../../images/card/right-arrow.svg";
 import arrowLeft from "../../../images/card/left-arrow.svg";
+import fruits from "../../../images/home/fruits.svg"
 
 const CustomPrevArrow = (props) => (
   <div {...props} style={{ ...slickArrowStyles, left: "-20px" }}>
@@ -114,7 +115,7 @@ export function HomeAdmin() {
 
       <main>
         <section>
-          <img src="src/images/home/fruits.svg" alt="Frutas decorativas " />
+          <img src={fruits} alt="Frutas decorativas " />
           <div id="text">
             <h5>Sabores inigualáveis</h5>
             <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
@@ -129,7 +130,7 @@ export function HomeAdmin() {
               searchResults.refeicoes.map((food, index) => (
                 <CardAdmin
                   key={food.id}
-                  img={`http://localhost:7777/files/${food.avatar}`}
+                  img={`https://api-food-explorer-k28p.onrender.com/files/${food.avatar}`}
                   id={food.id}
                   food={food.title}
                   description={food.description}
@@ -149,7 +150,7 @@ export function HomeAdmin() {
               searchResults.refeicoes.map((food, index) => (
                 <CardAdmin
                   key={food.id}
-                  img={`http://localhost:7777/files/${food.avatar}`}
+                  img={`https://api-food-explorer-k28p.onrender.com/files/${food.avatar}`}
                   id={food.id}
                   food={food.title}
                   description={food.description}
@@ -172,7 +173,7 @@ export function HomeAdmin() {
               searchResults.sobremesas.map((food, index) => (
                 <CardAdmin
                   key={food.id}
-                  img={`http://localhost:7777/files/${food.avatar}`}
+                  img={`https://api-food-explorer-k28p.onrender.com/files/${food.avatar}`}
                   id={food.id}
                   food={food.title}
                   description={food.description}
@@ -192,7 +193,7 @@ export function HomeAdmin() {
               searchResults.sobremesas.map((food, index) => (
                 <CardAdmin
                   key={food.id}
-                  img={`http://localhost:7777/files/${food.avatar}`}
+                  img={`https://api-food-explorer-k28p.onrender.com/files/${food.avatar}`}
                   id={food.id}
                   food={food.title}
                   description={food.description}
@@ -215,7 +216,7 @@ export function HomeAdmin() {
               searchResults.bebidas.map((food, index) => (
                 <CardAdmin
                   key={food.id}
-                  img={`http://localhost:7777/files/${food.avatar}`}
+                  img={`https://api-food-explorer-k28p.onrender.com/files/${food.avatar}`}
                   id={food.id}
                   food={food.title}
                   description={food.description}
@@ -235,7 +236,7 @@ export function HomeAdmin() {
               searchResults.bebidas.map((food, index) => (
                 <CardAdmin
                   key={food.id}
-                  img={`http://localhost:7777/files/${food.avatar}`}
+                  img={`https://api-food-explorer-k28p.onrender.com/files/${food.avatar}`}
                   id={food.id}
                   food={food.title}
                   description={food.description}

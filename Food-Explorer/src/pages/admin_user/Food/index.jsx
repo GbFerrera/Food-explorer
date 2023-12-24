@@ -37,7 +37,7 @@ export function AdminFood() {
 
     const {id,avatar,title,description,ingredients} = response.data
 
-    const avatarUrl = `http://localhost:7777/files/${avatar}`;
+    const avatarUrl = `https://api-food-explorer-k28p.onrender.com/files/${avatar}`;
     setFoodData( {
       id,
       avatar:avatarUrl,

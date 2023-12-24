@@ -25,7 +25,7 @@ export function Food({ onIncludeAmount }) {
     api.get(`/foods/${params.id}`)
       .then((response) => {
         const { avatar, title, description, price, ingredients } = response.data;
-        const avatarUrl = `http://localhost:7777/files/${avatar}`;
+        const avatarUrl = `https://api-food-explorer-k28p.onrender.com/files/${avatar}`;
         
         const parsedPrice = !isNaN(parseFloat(price)) ? parseFloat(price) : 0;
 

@@ -143,7 +143,7 @@ export function Home() {
               searchResults.refeicoes.map((food, index) => (
                 <Card
                   key={food.id}
-                  img={`http://localhost:7777/files/${food.avatar}`}
+                  img={`https://api-food-explorer-k28p.onrender.com/files/${food.avatar}`}
                   id={food.id}
                   food={food.title}
                   description={food.description}
@@ -164,7 +164,7 @@ export function Home() {
               searchResults.refeicoes.map((food, index) => (
                 <Card
                   key={food.id}
-                  img={`http://localhost:7777/files/${food.avatar}`}
+                  img={`https://api-food-explorer-k28p.onrender.com/files/${food.avatar}`}
                   id={food.id}
                   food={food.title}
                   description={food.description}
@@ -188,7 +188,7 @@ export function Home() {
               searchResults.sobremesas.map((food, index) => (
                 <Card
                   key={food.id}
-                  img={`http://localhost:7777/files/${food.avatar}`}
+                  img={`https://api-food-explorer-k28p.onrender.com/files/${food.avatar}`}
                   id={food.id}
                   food={food.title}
                   description={food.description}
@@ -209,7 +209,7 @@ export function Home() {
               searchResults.sobremesas.map((food, index) => (
                 <Card
                   key={food.id}
-                  img={`http://localhost:7777/files/${food.avatar}`}
+                  img={`https://api-food-explorer-k28p.onrender.com/files/${food.avatar}`}
                   id={food.id}
                   food={food.title}
                   description={food.description}
@@ -233,7 +233,7 @@ export function Home() {
               searchResults.bebidas.map((food, index) => (
                 <Card
                   key={food.id}
-                  img={`http://localhost:7777/files/${food.avatar}`}
+                  img={`https://api-food-explorer-k28p.onrender.com/files/${food.avatar}`}
                   id={food.id}
                   food={food.title}
                   description={food.description}
@@ -254,7 +254,7 @@ export function Home() {
               searchResults.bebidas.map((food, index) => (
                 <Card
                   key={food.id}
-                  img={`http://localhost:7777/files/${food.avatar}`}
+                  img={`https://api-food-explorer-k28p.onrender.com/files/${food.avatar}`}
                   id={food.id}
                   food={food.title}
                   description={food.description}
