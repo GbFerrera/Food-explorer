@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { useEffect } from "react";
 
-import penEdit from "../../../images/pen.svg"
+import penEdit from "../../images/pen.svg"
 
 export function CardAdmin({ id,img, food, description, price }) {
   return (
