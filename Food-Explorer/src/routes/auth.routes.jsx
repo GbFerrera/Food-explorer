@@ -10,7 +10,7 @@ return(
 
 <Routes>
 
-  <Route path="https://gbferrera.github.io/Food_explorer-Front/" element={<SingIn/>}/>
+  <Route path="/" element={<SingIn/>}/>
   <Route path="/register" element={<SingUp/>}/>
 
 </Routes>
