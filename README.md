@@ -1,5 +1,5 @@
 
-# Food Explorer - Front-End
+# Food Explorer
 
 
 
