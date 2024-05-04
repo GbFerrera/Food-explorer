@@ -15,7 +15,7 @@ input:focus {
  }
 
 
-@media(max-width: 425px){
+@media(max-width: 435px){
 
 min-width : 425px ;
 margin-top: 30%;
@@ -63,7 +63,7 @@ margin-top: 32px;
 
 }
 
-@media(min-width: 426px){
+@media(min-width: 436px){
 
  max-width: 1368px ;
  display: flex;
